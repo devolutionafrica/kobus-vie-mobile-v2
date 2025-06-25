@@ -1,0 +1,76 @@
+ion-grid {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-end;
+
+  padding: 0 10%;
+  margin-top: 30%;
+  width: 100%;
+
+  ion-img {
+    width: 7rem;
+    height: auto;
+  }
+
+
+  ion-item {
+    --border-style: none;
+    border-bottom: 1px solid var(--ion-color-dark);
+    margin-bottom: 16px;
+  }
+
+  ion-text h2 {
+    font-size: 1.4rem;
+    font-weight: 300 !important;
+    margin-bottom: 30px;
+  }
+}
+
+button {
+  width: 100%;
+  padding: 3.5px;
+  margin-top: 15px;
+
+  span {
+    font-size: 1rem !important;
+    font-weight: 400 !important;
+    margin: 0 5px;
+  }
+}
+
+a {
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 200;
+  color: var(--ion-color-secondary);
+}
+
+#prev-option {
+  position: absolute;
+  text-decoration: none;
+  left: 10px;
+  bottom: 10px;
+
+  span {
+    font-size: .9rem;
+    font-weight: 200;
+  }
+}
+
+::ng-deep .btn-style {
+  padding: 10px;
+  font-size: 1rem !important;
+  font-weight: 300 !important;
+  border-radius: 8px;
+}
+
+ion-input {
+  border-bottom: 0px;
+  font-size: 1rem;
+  font-weight: 200;
+}
+
+.ios-header {
+  padding-top: 1.40rem !important;
+}

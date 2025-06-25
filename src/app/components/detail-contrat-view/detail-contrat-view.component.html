@@ -1,0 +1,119 @@
+<div>
+  <div class="recp-cp-header">
+    <ion-icon
+    size="small"
+    slot="start"
+    color="primary"
+    name="person-outline"></ion-icon>
+    <span>Souscripteur</span>
+  </div>
+  <div class="recp-cp-body">
+    <div class="body-item">
+      <span class="fullname-style ">{{ proposition.Souscripteur.Nom|uppercase }} {{ proposition.Souscripteur.Prenoms|uppercase }}</span>
+    </div>
+    <div class="body-item">
+      <span>Né le {{proposition.Souscripteur.DateNaissance|date:"dd/MM/yyyy" }} à {{proposition.Souscripteur.LieuDeNaissance }}</span>
+    </div>
+    <div class="body-item">
+      <span>Contact: </span>
+      <span>{{proposition.Souscripteur.Telephone }}</span>
+    </div>
+    <div class="body-item">
+      <span>Email: </span>
+      <span>{{ proposition.Souscripteur.Email }}</span>
+    </div>
+  </div>
+  <div class="recp-cp-header">
+    <ion-icon
+    size="small"
+    slot="start"
+    color="primary"
+    name="people-outline"></ion-icon>
+    <span>Bénéficiaire(s)</span>
+  </div>
+  <div class="recp-cp-body">
+    <app-recap-item-beneficiaire
+      *ngFor="let beneficiare of proposition.Beneficiaires"
+      [beneficiaireJson]='beneficiare'
+      [typeBeneficiaires]='typeBeneficiaires'
+    ></app-recap-item-beneficiaire>
+  </div>
+  <div class="recp-cp-header">
+    <ion-icon
+      size="small"
+      slot="start"
+      color="primary"
+      name="document-text-outline"></ion-icon>
+    <span>Proposition</span>
+  </div>
+  <div class="recp-cp-body">
+    <div class="body-item bottom-lign">
+      <span>Produit </span>
+      <span>{{productSelected.libelle|uppercase}}</span>
+    </div>
+    <div class="body-item bottom-lign">
+      <span>Date d'effet </span>
+      <span>{{ proposition.Contrat.DateEffet|date:"dd/MM/yyyy" }}</span>
+    </div>
+    <div class="body-item bottom-lign">
+      <span>Durée du proposition</span>
+      <span>{{ proposition.Contrat.DureeContrat }} An(s)</span>
+    </div>
+    <div class="body-item bottom-lign">
+      <span>Date clôture</span>
+      <span>{{ dateCloture|date:"dd/MM/yyyy" }}</span>
+    </div>
+    <div class="body-item bottom-lign">
+      <span>Capital</span>
+      <span>{{ proposition.Contrat.Capital|number }} {{ devise}}</span>
+    </div>
+    <div *ngIf="!isRenteProduct" >
+      <div class="body-item bottom-lign">
+        <span>Capital acquis</span>
+        <span>{{ proposition.DetailSimulation.CapitalAcquis|number }} {{ devise}}</span>
+      </div>
+      <div class="body-item bottom-lign">
+        <span>Capital espéré</span>
+        <span>{{ proposition.DetailSimulation.CapitalEspere|number }} {{ devise}}</span>
+      </div>
+    </div>
+    <div *ngIf="proposition.DetailSimulation.GarantiesSupplementaires.length > 0" class="garantie-box">
+      <span class="box-title">Garanties supplementaires</span>
+      <div class="body-item bottom-lign" *ngFor="let garantie of proposition.DetailSimulation.GarantiesSupplementaires">
+        <span>{{ garantie.detailGarantie.libelle }}</span>
+        <span>{{ garantie.detailGarantie.montantSouscrit|number }} {{ devise}}</span>
+      </div>
+    </div>
+    <div class="prime-box">
+      <span class="box-title">Prime</span>
+      <div class="body-item bottom-lign">
+        <span>Fractionnment</span>
+        <span>{{ proposition.Contrat.Fractionnment }}</span>
+      </div>
+      <div class="body-item bottom-lign">
+        <span>Prime périodique</span>
+        <span>{{ proposition.DetailSimulation.PrimePeriodique|number }} {{ devise}}</span>
+      </div>
+    </div>
+    <div id="prime-box">
+      <span class="box-title">Première prime</span>
+      <div class="body-item bottom-lign">
+        <span>Coût de piece</span>
+        <span>{{ proposition.DetailSimulation.CoutPiece|number }} {{ devise}}</span>
+      </div>
+      <div class="body-item bottom-lign">
+        <span>Droit d'entrée</span>
+        <span>{{ proposition.DetailSimulation.FraisAdhesion|number }} {{ devise}}</span>
+      </div>
+      <div class="body-item bottom-lign">
+        <span>Prime</span>
+        <span>{{ proposition.DetailSimulation.PrimePeriodique|number }} {{ devise}}</span>
+      </div>
+      <div class="body-item">
+        <span>Total</span>
+        <span>{{ proposition.DetailSimulation.PremierePrime|number }} {{ devise}}</span>
+      </div>
+    </div>
+  </div>
+  <ng-content></ng-content>
+</div>

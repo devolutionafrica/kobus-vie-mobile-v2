@@ -1,0 +1,163 @@
+<div id="header-box"
+  [ngClass]="{'ios-header' : platformValue === 'ios'}"
+  style="background-color: var(--ion-color-primary)">
+  <ion-row>
+    <ion-col size="12">
+      <ion-text class="ion-text-center">
+        <h2 style="color: var(--ion-color-white);" class="ion-align-items-center">Nouvelle Demande</h2>
+      </ion-text>
+    </ion-col>
+  </ion-row>
+</div>
+<ion-content id="modal-prest-cmp" >
+  <form class="ion-padding" color="dark" [formGroup]="formSimulate">
+    <div class="ctnt ion-padding">
+      <div>
+        <h3 style="margin: 0;">{{detailPolice.libellePolice}}</h3>
+        <ion-row class="ion-align-items-center" style="margin-bottom: .5rem;">
+          <ion-col size="6" class="ion-no-padding">
+            <i>Date début</i>
+            <ion-row class="ion-align-items-center">
+              <i style="margin-right: .5rem;">{{detailPolice.dateEffet|date:'dd/MM/yyyy'}}</i>
+              <ion-icon color="" name="flag-outline"></ion-icon>
+            </ion-row>
+          </ion-col>
+          <ion-col size="6" class="ion-no-padding">
+            <i>Date fin</i>
+            <ion-row class="ion-align-items-center">
+              <i style="margin-right: .5rem;">{{detailPolice.dateEcheance|date:'dd/MM/yyyy'}}</i>
+              <ion-icon color="success" name="flag-outline" ></ion-icon>
+            </ion-row>
+          </ion-col>
+        </ion-row>
+      </div>
+      <div>
+        <ion-text color="dark">
+          <p>Type de demande</p>
+        </ion-text>
+        <ion-list>
+          <ion-item>
+            <ion-icon color="dark" slot="start" name="list-outline"></ion-icon>
+            <ion-select (ionChange)="changeTypePrestation($event)"
+              placeholder="Exemple : {{listTypePrestation[0].label}}"
+              formControlName="typeDemande" multiple="false" okText="Valider" cancelText="Annuler">
+              <ion-select-option *ngFor="let modePrs of listTypePrestation" [value]="modePrs.typePrs">
+                {{modePrs.label}}
+              </ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-list>
+      </div>
+      <ion-row *ngIf="loadingSimulate" class="ion-padding-bottom">
+        <ion-col size="12">
+          <p>Données en cours de chargement</p>
+          <mat-progress-bar mode="indeterminate" style="color: var(--ion-color-primary);"></mat-progress-bar>
+        </ion-col>
+      </ion-row>
+      <div *ngIf="isEligible && !loadingSimulate">
+        <div [formGroup]="formSimulate">
+          <div style="margin-top: 1.5rem">
+            <ngx-slider [options]="optionSlideMontant" formControlName="prestationAmount"></ngx-slider>
+          </div>
+          <ion-list *ngIf="listEcheance.length > 0">
+            <ion-text color="dark">
+              <p>Nombre d'echeance</p>
+            </ion-text>
+            <ion-item>
+              <ion-icon color="dark" slot="start" name="card-outline"></ion-icon>
+              <ion-select (ionChange)="changePeriodicPay($event)"
+                placeholder="Exemple "
+                formControlName="echeanceNumber" multiple="false" okText="Valider" cancelText="Annuler">
+                <ion-select-option *ngFor="let echeance of listEcheance" [value]="echeance.$id">
+                  {{echeance.Libelle}}
+                </ion-select-option>
+              </ion-select>
+            </ion-item>
+          </ion-list>
+          <div *ngIf="listReglement.length > 0">
+            <ion-text color="dark">
+              <p>Mode de règlement</p>
+            </ion-text>
+            <ion-list>
+              <ion-item>
+                <ion-icon color="dark" slot="start" name="card-outline"></ion-icon>
+                <ion-select (ionChange)="changePeriodicPay($event)"
+                  placeholder="Exemple "
+                  formControlName="payMode" multiple="false" okText="Valider" cancelText="Annuler">
+                  <ion-select-option *ngFor="let reglement of listReglement" [value]="reglement.$id">
+                    {{reglement.Libelle}}
+                  </ion-select-option>
+                </ion-select>
+              </ion-item>
+            </ion-list>
+          </div>
+          <div [ngSwitch]="currentModeSelected">
+            <div *ngSwitchCase="'C'">
+              <ion-text color="dark">
+                <p>Agence de retrait</p>
+              </ion-text>
+              <ion-item>
+                <ion-icon color="dark" slot="start" name="map-outline"></ion-icon>
+                <ion-select (ionChange)="changePeriodicPay($event)"
+                  formControlName="agence"
+                  placeholder="Exemple : {{listAgences[0].DistrictAgence }}"
+                  multiple="false" okText="Valider" cancelText="Annuler">
+                  <ion-select-option *ngFor="let agence of listAgences" [value]="agence.IdAgence">
+                    {{agence.DistrictAgence}}
+                  </ion-select-option>
+                </ion-select>
+              </ion-item>
+            </div>
+            <div *ngSwitchCase="'M'">
+              <ion-text color="dark">
+                <p>Numéro de téléphone</p>
+              </ion-text>
+              <ion-item>
+                <ion-icon color="dark" slot="start" name="call-outline"></ion-icon>
+                <ion-select (ionChange)="changeTelephone($event)"
+                  formControlName="telephone"
+                  placeholder="Exemple : {{phones[0]}}"
+                  multiple="false" okText="Valider" cancelText="Annuler">
+                  <ion-select-option *ngFor="let phone of phones" [value]="phone">{{phone}}</ion-select-option>
+                </ion-select>
+              </ion-item>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</ion-content>
+<div id="footer-box" *ngIf="!loadingSimulate">
+  <ion-row>
+    <ion-col size="6" style="background-color: var(--ion-color-primary);">
+      <button
+        color="accent"
+        (click)="closeModal()"
+        mat-button
+        class="custom-btn-style">
+        <mat-icon style="margin: 0 15px;">expand_more</mat-icon>
+        <span>Fermer</span>
+      </button>
+    </ion-col>
+    <ion-col size="6" style="background-color: var(--ion-color-secondary);">
+      <button
+        color="dark"
+        *ngIf="!simulateStatus"
+        (click)="simulate()"
+        mat-button>
+        <span style="color: var(--ion-color-white)">Simuler</span>
+        <mat-icon style="margin: 0 15px; color: var(--ion-color-white)" color="accent">trending_up</mat-icon>
+      </button>
+      <button
+        color="dark"
+        *ngIf="simulateStatus"
+        [disabled]="!simulateStatus || !isInitInputSimulate"
+        (click)="sauvegardeDemandePrestation()"
+        mat-button>
+        <span style="color: var(--ion-color-white)">Soumettre</span>
+        <mat-icon style="margin: 0 15px; color: var(--ion-color-white)" color="accent">send</mat-icon>
+      </button>
+    </ion-col>
+  </ion-row>
+</div>

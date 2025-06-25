@@ -1,0 +1,53 @@
+<ion-content [fullscreen]="true" [ngClass]="{'ios-header' : platformValue === 'ios'}">
+  <ion-grid>
+    <ion-row class="ion-justify-content-center ion-align-items-center">
+      <ion-col size-xs="12" size-sm="6">
+        <ion-row class="ion-justify-content-center ion-align-items-center">
+          <ion-img src="assets/icon/{{appLogo}}"></ion-img>
+        </ion-row>
+      </ion-col>
+      <ion-col size-xs="12" size-sm="6">
+        <form [formGroup]="recupForm" >
+          <ion-text color="dark" class="ion-text-center">
+            <h3>{{'RECUP_PASSWORD_SCREEN.layoutText.title'|translate}}</h3>
+          </ion-text>
+          <ion-item>
+            <ion-icon color="dark" slot="start" name="document-outline"></ion-icon>
+            <ion-input
+              formControlName="nuPolice"
+              color="dark"
+              type="text"
+              placeholder="{{'RECUP_PASSWORD_SCREEN.formText.inputText.nuPolice.placeholder'|translate}}"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-icon color="dark" slot="start" name="mail-outline"></ion-icon>
+            <ion-input
+              formControlName="adressMail"
+              color="dark"
+              type="email"
+              placeholder="{{'RECUP_PASSWORD_SCREEN.formText.inputText.addressMail.placeholder'|translate}}"></ion-input>
+          </ion-item>
+          <button
+            class="btn-style" style="background-color: var(--ion-color-primary) !important;"
+            (click)="sendRecupAccount()"
+            [disabled]="invalidForm"
+            mat-flat-button>
+            <mat-icon style="color: var(--ion-color-white)">login</mat-icon>
+            <span style="color: var(--ion-color-white)">{{'RECUP_PASSWORD_SCREEN.formText.btnText.btnReset'|translate}}</span>
+          </button>
+          <ion-text color="dark" class="ion-text-center">
+            <p style="margin: 25px 0" >
+              {{'RECUP_PASSWORD_SCREEN.footerText.text'|translate}}
+              <a [routerLink]="[ '/login' ]">{{'RECUP_PASSWORD_SCREEN.footerText.simpleAction'|translate}}</a></p>
+          </ion-text>
+        </form>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <a id="prev-option" [routerLink]="[ '/login' ]">
+    <ion-button color="primary" expand="block" fill="clear" shape="round">
+      <span>{{'RECUP_PASSWORD_SCREEN.footerText.btnText.previousAction.title'|translate}}</span>
+      <ion-icon slot="start" name="chevron-back-outline"></ion-icon>
+    </ion-button>
+  </a>
+</ion-content>

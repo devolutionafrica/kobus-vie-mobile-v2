@@ -1,0 +1,79 @@
+::ng-deep #detail-prestation-modal {
+  width: 100%;
+  height: 100%;
+  margin: 0 15px;
+  background-color: var(--ion-color-white);
+}
+
+::ng-deep .detail-prestation-modal .modal-wrapper {
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: absolute;
+  background-color: transparent;
+}
+
+::ng-deep .detail-prestation-modal .ion-page {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
+  background-color: transparent;
+}
+
+::ng-deep #detail-proposition-modal {
+  width: 100%;
+  height: 100%;
+  background-color: var(--ion-color-white);
+}
+
+#header-box {
+  width: 100%;
+  padding:5px 15px;
+
+  h2 {
+    margin: 0;
+    color: var(--ion-color-secondary);
+    text-align: center;
+  }
+
+}
+
+#footer-box {
+  width: 100%;
+  button {
+    width: 100%;
+  }
+}
+
+.custom-btn-style {
+  color: #fff !important;
+}
+
+#recap-content {
+  padding-top: 10px;
+  margin-left: 25px !important;
+  margin-right: 25px !important;
+}
+
+.message {
+  margin: 0;
+  margin-bottom: 20px;
+  font-size: 14px;
+  padding: 5px 10px;
+}
+
+.msg-info {
+  background-color: #fff6eb;
+  border-left: 4px solid #db972a;
+  color: rgba(42, 42, 42, 0.678);
+}
+
+.msg-success {
+  background-color: #ebfff4;
+  border-left: 4px solid #068f34;
+  color: rgba(42, 42, 42, 0.678);
+}
+

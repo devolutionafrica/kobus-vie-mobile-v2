@@ -1,0 +1,13 @@
+.garantie-item {
+  padding: .8rem;
+  border-radius: .3rem;
+  border: 1px solid gray ;
+}
+
+ion-icon {
+  font-size: 1.7rem;
+}
+
+::ng-deep .item-native {
+  padding: 0 !important;
+}

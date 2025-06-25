@@ -1,0 +1,27 @@
+::ng-deep #pay_integrator_modal-style{
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--ion-color-white);
+}
+
+::ng-deep .pay_integrator_modal-style .ion-page {
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+  justify-content: flex-end;
+  background: transparent;
+}
+
+h1 {
+  padding-top: 2rem;
+  font-size: xx-large;
+  color: var(--ion-color-secondary);
+}
+
+#btn-validetor {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+

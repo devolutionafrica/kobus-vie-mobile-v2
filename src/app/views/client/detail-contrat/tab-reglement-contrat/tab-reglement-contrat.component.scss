@@ -1,0 +1,26 @@
+.tab-detail-box {
+    padding: 10px 15.5px;
+}
+
+.empty-content-box {
+  display: flex;
+  flex-direction: column;
+  margin-top: 40% !important;
+  justify-content: space-around;
+  align-items: center;
+
+  p {
+    width: 55%;
+    font-size: .9rem !important;
+    font-weight: 200 !important;
+    text-align: center;
+    color: #757575;
+  }
+
+  span {
+    text-align: center;
+    font-size: 1rem !important;
+    font-weight: 200 !important;
+    color: var(--ion-color-secondary);
+  }
+}

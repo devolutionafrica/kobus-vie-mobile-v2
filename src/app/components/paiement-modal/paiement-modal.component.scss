@@ -1,0 +1,143 @@
+ion-content {
+  --background: var(--ion-background-white);
+}
+
+.header-box {
+  padding: 5px;
+  h2 {
+    margin: 0;
+    font-size: large;
+  }
+}
+
+
+.amont-box {
+  h1 {
+    font-size: 40px;
+    font-weight: bold;
+    margin-top: 10px;
+    color: var(--ion-color-secondary);
+  }
+
+}
+
+.box-title {
+  font-size: 18px;
+  color: var(--ion-color-primary) ;
+}
+
+.amont-box {
+  margin-top: 30px;
+}
+
+.card-mode-pay {
+  margin-top: 10px;
+  border-radius: 6px;
+  background-color: cadetblue;
+}
+
+.pay-img {
+  height: 50px;
+  width: 50px;
+}
+
+.ligne-tag {
+  margin-top: 5px;
+  height: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  span {
+    position: absolute;
+    left: 44%;
+    right: 44%;
+    width: 12%;
+    padding: 2px 10px;
+    font-weight: 500;
+    border-radius: 50px;
+    text-align: center;
+    background: var(--ion-color-secondary);
+  }
+}
+
+::ng-deep #pay-box {
+  padding: 14px;
+  height: max-content;
+  margin-top: 20px;
+  background-color:  var(--ion-color-white);;
+  border-top-left-radius:  10px;
+  border-top-right-radius:  10px;
+
+  h1 {
+    margin: 0;
+    margin-top: 15px;
+    font-size: 35px;
+    text-align: center;
+  }
+
+  p {
+    color: rgb(117, 117, 117);
+    margin-top: 5px;
+    text-align: center;
+  }
+
+  ion-item {
+    --border-style: none;
+    // border-radius: 8px;
+    width: 100%;
+    border-bottom: 1px solid #1334594d;
+    margin-bottom: 10px;
+
+    ion-input {
+      color: var(--ion-color-dark)  ;
+    }
+  }
+
+  .input-box {
+    margin-bottom: 10px;
+  }
+
+  .tab-value {
+    color: #f5b540;
+    font-weight: bold;
+  }
+
+  table {
+    width: 100%;
+    padding: 15px;
+  }
+
+  .ligne-tag-pay {
+    margin-top: 15px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    span {
+      left: auto;
+      right: auto;
+      position: absolute;
+      padding: 6px 15px;
+      font-weight: bold;
+      border-radius: 20px;
+      text-align: center;
+      color: var(--ion-color-white);
+      background: var(--ion-color-primary);
+    }
+
+    hr {
+      background-color: var(--ion-color-primary);
+    }
+  }
+
+  .btn-submit {
+    margin-top: 20px;
+  }
+
+  .mat-raised-button {
+    width: 100%;
+    padding: 5px;
+    box-shadow: none !important;
+  }
+}
+

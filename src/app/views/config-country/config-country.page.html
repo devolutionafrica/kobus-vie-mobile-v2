@@ -1,0 +1,35 @@
+<ion-content fullscreen class="ion-padding" scroll-y="false" [ngClass]="{'ios-header' : platformValue === 'ios'}">
+  <div id="country">
+    <ion-img class="lang-icon" src="assets/icon/ic_user_location_96px.png"></ion-img>
+    <ion-text color="dark">
+      <h1>{{'CONFIG_COUNTRY.layoutText.title'|translate}}</h1>
+    </ion-text>
+    <form [formGroup]="filialeGroup">
+      <ion-item class="ion-margin-bottom">
+        <mat-select
+          matNativeControl
+          formControlName="filialeName"
+          class="custom-select"
+          (selectionChange)="changeFiliale($event)" >
+          <mat-option>{{'CONFIG_COUNTRY.selectInput.title'|translate}}</mat-option>
+          <mat-option *ngFor="let filiale of filiales" [value]="filiale.filiale">{{filiale.filiale}}</mat-option>
+        </mat-select>
+        <ng-container *ngIf="filialeGroup.invalid; else elseTemplate">
+          <ion-icon color="dark" slot="end" name="home-outline"></ion-icon>
+        </ng-container>
+        <ng-template #elseTemplate>
+          <ion-img src="assets/country/{{filialeSelected.icon}}"></ion-img>
+        </ng-template>
+      </ion-item>
+    </form>
+    <div>
+      <a *ngIf="!filialeGroup.invalid" id="next-option" [routerLink]="[ '/init-app' ]">
+        <ion-button color="secondary" expand="block" fill="clear" shape="round">
+          {{'CONFIG_COUNTRY.btnText.nextAction.title'|translate}}
+          <ion-icon slot="end" name="chevron-forward-outline"></ion-icon>
+        </ion-button>
+      </a>
+      
+    </div>
+  </div>
+</ion-content>

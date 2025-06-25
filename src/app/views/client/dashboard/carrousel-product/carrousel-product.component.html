@@ -1,0 +1,27 @@
+<ion-grid>
+  <ion-row>
+    <ion-col size="12">
+      <swiper-container [options]="slideOptsThree">
+        
+        <swiper-slide *ngFor="let product of sliderThree.slidesItems">
+          <app-product-dashboard-item [data]='product' (click)="checkProductDetail(product.produitId)"></app-product-dashboard-item>
+        </swiper-slide>
+
+        <swiper-slide *ngIf="!isLoading">
+          <ion-skeleton-text class="skeleton" animated></ion-skeleton-text>
+        </swiper-slide>
+
+        <swiper-slide *ngIf="!isLoading">
+          <ion-skeleton-text class="skeleton" animated></ion-skeleton-text>
+        </swiper-slide>
+
+      </swiper-container>
+      <app-alert
+        *ngIf="productList.length === 0"
+        type="default"
+        icon="alert-circle-outline"
+        message="Le catalogue produit est temporairement indisponible merci de réessayer plus tard"
+        ></app-alert>
+    </ion-col>
+  </ion-row>
+</ion-grid>

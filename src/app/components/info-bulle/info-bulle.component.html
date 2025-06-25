@@ -1,0 +1,9 @@
+<ion-card class="ion-no-padding" id="info-bulle" >
+    <ion-card-header class="ion-no-padding" >
+        <h3 style="color: var(--ion-color-dark); padding: 1rem 1rem 0 1rem">{{title}}</h3>
+    </ion-card-header>
+    <ion-card-content>
+        <p style="color: var(--ion-color-dark)">{{message}}</p>
+        <span (click)="closeModal()" class="btnBox" >Fermer</span>
+    </ion-card-content>
+</ion-card>

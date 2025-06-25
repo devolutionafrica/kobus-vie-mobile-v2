@@ -1,0 +1,23 @@
+<div id="garantie_modal-style">
+  <ion-row class="ion-align-items-center" class="ion-justify-content-between" >
+    <ion-col size="11">
+      <ion-title class="ion-no-padding" style="color: rgba(0, 0, 0, 0.801); text-align: start;">Couverture(s) Supplémentaire(s)</ion-title>
+    </ion-col>
+    <ion-col size="1">
+      <span>
+        <ion-icon size="large" slot="start" name="close-outline" (click)="closeModal()"></ion-icon>
+      </span>
+    </ion-col>
+  </ion-row>
+  <ion-content class="ion-padding-top">
+    <garantie-facultative
+      *ngFor="let garantie of newGaranties"
+      devise="FCFA"
+      [garantieInfo]="garantie"
+      (actionAdd)="addGarantie(garantie)"
+      (actionPop)="popGarantie(garantie)"
+      [callbackResponse]="callbackCapitauxResponse"
+      (actionLoadGarantie)="getCapitauxGaranties(garantie)"
+    ></garantie-facultative>
+  </ion-content>
+</div>

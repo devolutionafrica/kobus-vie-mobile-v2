@@ -1,0 +1,69 @@
+<div class="container mx-auto">
+  <div class="row d-flex justify-content-center mt-5">
+    <img style="width: 180px;" src="assets/images/pay_img/afrikpay.png" alt="">
+  </div>
+  <div class="row d-flex justify-content-center">
+      <div class="col-xs-12 col-sm-10 col-md-6 mt-3">
+        <form id="form_id" class="p-5">
+          <div class="mb-3 mt-3">
+              <label for="referenceNumber" class="form-label">Numéro de téléphone</label>
+              <input type="text" value="237671696684" class="form-control" id="referenceNumber" placeholder="Veuillez entrer le numéro de réference" name="referenceNumber" autocomplete="on">
+          </div>
+
+          <div class="mb-3 mt-3">
+              <label for="amount" class="form-label">Montant</label>
+              <input type="number" class="form-control" id="amount" placeholder="Veuillez entrer le montant" name="amount" required="" autocomplete="on">
+          </div>
+
+          <div class="mb-3 mt-3" hidden>
+              <label for="description" class="form-label">Description</label>
+              <input type="text" class="form-control" id="description" placeholder="Veuillez entrer la description" name="description" autocomplete="on">
+          </div>
+
+          <div class="mb-3 mt-3" hidden>
+              <label for="email" class="form-label">Email</label>
+              <input type="email" class="form-control" id="email" placeholder="Veuillez entrer votre addresse email" name="email" autocomplete="on">
+          </div>
+
+          <div class="mb-3 mt-3" hidden>
+              <label for="phone" class="form-label">Tél</label>
+              <input type="text" class="form-control" id="phone" placeholder="Veuillez entrer votre numéro de téléphone" name="phone" autocomplete="on">
+          </div>
+
+          <div class="mb-3 mt-3" hidden>
+              <label for="firstName" class="form-label">Prénom</label>
+              <input type="text" class="form-control" id="firstName" placeholder="Veuillez entrer votre Prénom" name="data[firstName]" autocomplete="on">
+          </div>
+
+          <div class="mb-3 mt-3" hidden>
+              <label for="lastName" class="form-label">Nom</label>
+              <input type="text" class="form-control" id="lastName" placeholder="Veuillez entrer votre Nom" name="data[lastName]" autocomplete="on">
+          </div>
+
+          <div class="mb-3 mt-3" hidden>
+              <label for="addressLine1" class="form-label">Adresse</label>
+              <input type="text" class="form-control" id="addressLine1" placeholder="Veuillez entrer votre addresse" name="data[addressLine1]" autocomplete="on">
+          </div>
+
+          <div class="mb-3 mt-3" hidden>
+              <label for="addressCity" class="form-label">Ville</label>
+              <input type="text" class="form-control" id="addressCity" placeholder="Veuillez entrer votre Ville" name="data[addressCity]" autocomplete="on">
+          </div>
+
+          <div class="mb-3 mt-3" hidden>
+              <label for="addressState" class="form-label">Pays</label>
+              <input type="text" class="form-control" id="addressState" placeholder="Veuillez entrer votre Pays" name="data[addressState]" autocomplete="on">
+          </div>
+
+          <div class="mb-3 mt-3" hidden>
+              <label for="addressPostalCode" class="form-label">Code Postal</label>
+              <input type="text" class="form-control" id="addressPostalCode" placeholder="Veuillez entrer votre Code Postal" name="data[addressPostalCode]" autocomplete="on">
+          </div>
+
+          <div class="text-center px-4 px-md-3 mt-5">
+              <div id="buttons-container" class="row d-flex justify-content-center align-items-center flex-wrap mt-2"></div>
+          </div>
+      </form>
+      </div>
+  </div>
+</div>

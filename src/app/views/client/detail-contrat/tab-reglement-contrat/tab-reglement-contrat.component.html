@@ -1,0 +1,17 @@
+<div class="tab-detail-box">
+  <div class="empty-content-box" *ngIf="isEmpty">
+    <lottie-player
+      autoplay
+      loop
+      count="-1"
+      style='width:200px'
+      src="../assets/lotties/lot_empty_file.json"
+      speed='1'>
+    </lottie-player>
+    <p>Vous n'avez pas de demande en cours</p>
+  </div>
+  <item-reglement
+    *ngFor="let itemReglmt of reglements"
+    [reglement]="itemReglmt"
+  ></item-reglement>
+</div>

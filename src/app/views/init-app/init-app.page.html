@@ -1,0 +1,32 @@
+<ion-content fullscreen class="ion-padding" scroll-y="false" [ngClass]="{'ios-header' : platformValue === 'ios'}">
+  
+  <swiper-container autoplay="true" pagination="false" autoplay-delay="2500" autoplay-disable-on-interaction="false" initial-slide="0">
+    <swiper-slide class="slide" *ngFor="let appInfoItem of sliderThree.slidesItems">
+      <div class="slider-box">
+        <div class="lottie-box">
+          <ng-lottie [options]="appInfoItem.lottieOptions"></ng-lottie>
+        </div>
+      </div>
+    </swiper-slide>
+  </swiper-container>
+  
+  <div class="footer-box" *ngIf="!isConfig">
+    <ng-lottie style='width:80px' [options]="waitingOptions"></ng-lottie>
+    <p>Veuillez patienter</p>
+    <p>Nous configurons votre espace personnel</p>
+  </div>
+  <div class="footer-box" *ngIf="isConfig">
+    <ng-lottie style='width:90px' [options]="completedOptions"></ng-lottie>
+    <p>Configuration terminée</p>
+    <a routerLink="/parrainage">
+      <ion-button
+        color="success"
+        expand="block"
+        fill="clear"
+        shape="round">
+        Continuer
+        <ion-icon slot="end" name="chevron-forward-outline"></ion-icon>
+      </ion-button>
+    </a>
+  </div>
+</ion-content>

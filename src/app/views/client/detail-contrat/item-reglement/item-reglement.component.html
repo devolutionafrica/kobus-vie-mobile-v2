@@ -1,0 +1,20 @@
+<div class="reglement-card">
+  <ion-col size="12" class="ion-no-padding">
+    <h3>{{reglement.typeSinistre}}</h3>
+  </ion-col>
+  <ion-row class="ion-align-items-left">
+    <ion-col size="3">
+      <div>
+        <!-- <ion-icon size="large" slot="start" name="add"></ion-icon> -->
+      </div>
+    </ion-col>
+    <ion-col size="9" class="ion-text-end">
+      <h3>Bénéfiaire</h3>
+      <h2 style="margin: .2rem">{{reglement.beneficiaire}}</h2>
+      <span style="display: block; margin-bottom: .5rem">{{reglement.montantReglement}} {{reglement.deviseReglement}}</span>
+      <span style="font-size: 0.9rem;">Mode de reglement : {{reglement.modeReglementSouhaite|lowercase }}</span>
+    </ion-col>
+  </ion-row>
+  <span style="font-size: .8rem; color: dimgray;">
+    Réglement {{reglement.etatReglement|lowercase }} / date : {{reglement.dateReglement|date:'dd/MM/yyyy' }}</span>
+</div>

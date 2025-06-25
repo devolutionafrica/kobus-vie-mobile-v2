@@ -1,0 +1,10 @@
+ <div class="body-item bottom-lign">
+   <span class="fullname-color" *ngIf="typeBeneficiare !== 'Autre'">{{ beneficiareFullname }}</span>
+   <p *ngIf="typeBeneficiare === 'Autre'">
+    <span class="fullname-color">{{ beneficiareFullname }}</span>
+    <span class="custom-elmts">Téléphone : {{ beneficiaireJson.Telephone }}</span>
+    <span class="custom-elmts">Date de naissance : {{ beneficiaireJson.DateNaissance|date:"dd/MM/yyyy" }}</span>
+    <span class="custom-elmts">Lieu de naissance : {{ beneficiaireJson.LieuDeNaissance }}</span>
+   </p>
+   <span>{{ beneficiaireJson.Repartition }} %</span>
+</div>

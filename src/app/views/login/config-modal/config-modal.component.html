@@ -1,0 +1,17 @@
+<div class="modal-config ion-padding">
+  <ion-toolbar>
+    <h2>Changer de pays</h2>
+    <ion-icon (click)="dismiss()" name="close-outline" size="large" slot="end"></ion-icon>
+  </ion-toolbar>
+    <ion-content>
+      <ion-list>
+        <ion-radio-group [value]="filialeSelected">
+          <ion-item *ngFor="let filialeItem of filialeList" (click)="selectFiliale(filialeItem)">
+            <ion-img src="assets/country/{{filialeItem.icon}}"></ion-img>
+            <ion-label>{{filialeItem.filiale}}</ion-label>
+            <ion-radio slot="end" [value]='filialeItem'></ion-radio>
+          </ion-item>
+        </ion-radio-group>
+      </ion-list>
+    </ion-content>
+</div>

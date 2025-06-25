@@ -1,0 +1,57 @@
+<div id="modal-recap-panier-cmp" [ngClass]="{'ios-header' : platformValue === 'ios'}">
+  <ion-row class="ion-align-items-center ion-padding">
+    <ion-col size="2">
+      <ion-icon color="dark" size="large" name="cart-outline"></ion-icon>
+    </ion-col>
+    <ion-col size="9">
+      <ion-text color="dark">
+        <h2 style="margin: 0;">Mon panier</h2>
+      </ion-text>
+    </ion-col>
+    <ion-col size="1" (click)="onCloseModal()">
+      <ion-icon color="secondary" size="large" name="close-outline"></ion-icon>
+    </ion-col>
+  </ion-row>
+  <ng-container *ngIf="!isEmptyList; else emptyListView">
+    <ion-content>
+      <div id="list_impaye" class="ion-padding">
+        <app-item-impaye
+          (childEvent)="executeChildAction($event)"
+          *ngFor="let impaye of listPanier"
+          [selectInput]='actionChecked'
+          [data]='impaye'>
+        </app-item-impaye>
+      </div>
+    </ion-content>
+    <div id="recap-payee" class="ion-padding">
+      <ion-row id="btn_pay" class="ion-align-items-center" (click)="openModal()">
+        <ion-col size="7">
+          <ion-text color="light">
+            <span>{{totalAmount|number}} {{devise}}</span>
+          </ion-text>
+        </ion-col>
+        <ion-col size="5">
+          <ion-row class="ion-align-items-center">
+            <ion-col size="6">
+              <ion-icon size="large" style="color: var(--ion-color-white);" name="card-outline"></ion-icon>
+            </ion-col>
+            <ion-col size="6">
+              <ion-text>
+                <span style="color: var(--ion-color-white);"> Payer</span>
+              </ion-text>
+            </ion-col>
+          </ion-row>
+        </ion-col>
+      </ion-row>
+    </div>
+  </ng-container>
+  <ng-template #emptyListView>
+    <div id="empty_panier_box" class="ion-padding">
+      <ion-icon name="alert-circle-outline"></ion-icon>
+      <ion-text color="light">
+        <span>Votre panier est vide</span>
+      </ion-text>
+    </div>
+  </ng-template>
+</div>
+

@@ -1,0 +1,36 @@
+<div id="hub2-modal-cmp">
+  <ng-lottie *ngIf="!isValid" [options] = "hub2AnimationOptions"></ng-lottie>
+  
+  <div class="box-item  bottom-lign">
+    <span>téléphone </span>
+    <span>{{data.phoneNumber}}</span>
+  </div>
+  <div class="box-item  bottom-lign">
+    <span>montant </span>
+    <span>{{data.amount}} {{devise}}</span>
+  </div>
+  <div class="box-item  bottom-lign">
+    <span>frais </span>
+    <span>{{data.frais}} {{devise}}</span>
+  </div>
+  <div class="box-item  bottom-lign">
+    <span>Total </span>
+    <span>{{data.totalAmount}} {{devise}}</span>
+  </div>
+  <p *ngIf="!isValid" class="title" style="background-color: blanchedalmond;">{{data.message}}</p>
+  <form [formGroup]="formCodeOTP"  class="ion-padding" *ngIf="!isLunch">
+    <ion-row class="input-box">
+      <ion-item>
+        <ion-icon color="dark" slot="start" name="keypad-outline"></ion-icon>
+        <ion-input formControlName="codeOTP" color="dark" type="string" placeholder="Exemple : 0102"></ion-input>
+      </ion-item>
+    </ion-row>
+  </form>
+  <div class="box-loading box-center" *ngIf="isLunch">
+    <ng-lottie *ngIf="!isValid" [options] = "loadingAnimationOptions"></ng-lottie>
+    
+    <ng-lottie *ngIf="isValid" [options] = "validationAnimationOptions"></ng-lottie>
+    
+  </div>
+</div>
+

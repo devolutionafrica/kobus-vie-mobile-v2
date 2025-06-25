@@ -1,0 +1,160 @@
+{
+    "CONFIG_LANG": {
+        "layoutText": {
+            "title": "Selection de la langue"
+        },
+        "radioText": {
+            "language": {
+                "fr": "Français",
+                "en": "Anglais",
+                "pt": "Portugais"
+            }
+        },
+        "btnText": {
+            "title": "Continuer"
+        }
+    },
+    "CONFIG_COUNTRY": {
+        "layoutText": {
+            "title": "Choix du pays"
+        },
+        "selectInput": {
+            "title": "Choix du pays"
+        },
+        "btnText": {
+           "nextAction": {
+                "title": "Continuer"
+           },
+           "previousAction": {
+            "title": "Précedent"
+           }
+        }
+    },
+    "LOGIN_SCREEN": {
+        "layoutText": {
+            "title": "Connexion"
+        },
+        "formText": {
+            "inputText": {
+                "username": {
+                    "text": "",
+                    "placeholder": "Nom d'utilisateur",
+                    "errorMsg": {}
+                },
+                "password": {
+                    "text": "",
+                    "placeholder": "Mot de passe",
+                    "errorMsg": {}
+                }
+            },
+            "btnText": {
+                "btnSingin": "Se connecter",
+                "btnSubscribe": "Souscrire"
+            }
+        },
+        "footerText": {
+            "text": "Mot de passe oublié ?",
+            "simpleAction": " cliquez ici",
+            "btnText": {
+                "previousAction": {
+                    "title": "Précedent"
+                }
+             }
+        }
+    },
+    "DASHBOARD": {
+        "headerText": "Accueil",
+        "chartText": {
+            "totalEncaiss": "Total d'encaissement",
+            "totalEpargn": "Total d'impayés",
+            "totalPrim": "Total primes"
+        },
+        "contratText": {
+            "header": "Mes contrats"
+        }
+    },
+    "RECUP_PASSWORD_SCREEN": {
+      "layoutText": {
+        "title": "Mot de passe oublié"
+      },
+      "formText": {
+          "inputText": {
+              "nuPolice": {
+                  "text": "",
+                  "placeholder": "Numéro de police",
+                  "errorMsg": {}
+              },
+              "addressMail": {
+                  "text": "",
+                  "placeholder": "Adresse mail",
+                  "errorMsg": {}
+              }
+          },
+          "btnText": {
+              "btnReset": "Réinitialiser"
+          }
+      },
+      "footerText": {
+          "text": "Se connecter ?",
+          "simpleAction": " maintenant",
+          "btnText": {
+              "previousAction": {
+                  "title": "Précedent"
+              }
+          }
+      }
+    },
+    "PRODUCTS_SCREEN": {
+      "headerTitle": "Produits"
+    },
+    "DETAIL_CONTRAT_SCREEN": {
+      "headerTitle": "Detail du Contrat",
+      "bannerBox": {
+        "nuPolice": "N°Police",
+        "dateEffet": "Date d'effet"
+      },
+      "tableSlider": {
+        "slideDetail": {
+          "title": "Detail",
+          "content": {
+            "nuPolice": "Numero de police",
+            "typePolice": "Type de police",
+            "labelCntrt": "Libelle du contrat",
+            "dateStart": "Date de début",
+            "dateEnd": "Date de fin",
+            "numberImpaye": "Nombre de quittance impayé",
+            "dureePolice": "Durée de la police",
+            "amountCapital": "Cumul des cotisations ",
+            "amountRachat": "Valeur de rachat",
+            "primePeriodic": "Montant de la prime périodique",
+            "periodicity": "Périodicité"
+          }
+        },
+        "slidePrestation": {
+          "title": "Prestation",
+          "content": {
+            "btnText": "Nouvelle prestation ",
+            "leftText": "Prestation",
+            "rightText": "Montant",
+            "itemPrestation": {
+              "date": "Demandé le "
+            }
+          }
+        },
+        "slideImpaye": {
+          "title": "Impayés",
+          "content": {
+            "btnPanier": "Panier",
+            "itemPeesrions": {
+              "amount": "Montant",
+              "prestDate": "Date du",
+              "prestEnd": "au"
+            }
+          }
+        },
+        "slideReglmt": {
+          "title": "Reglement"
+        }
+      }
+    }
+}

@@ -1,0 +1,28 @@
+<ion-content fullscreen class="ion-padding" scroll-y="false" [ngClass]="{'ios-header' : platformValue === 'ios'}">
+  <div id="language">
+    <ion-img class="lang-icon" src="assets/icon/ic_language.png"></ion-img>
+    <ion-text color="dark">
+      <h1>{{'CONFIG_LANG.layoutText.title'|translate}}</h1>
+    </ion-text>
+    <ion-radio-group value="{{language}}" (ionChange)="changLanguage($event)">
+      <div class="item-lang">
+        <ion-item>
+          <ion-img src="assets/country/ic_france_96px.png"></ion-img>
+          <ion-text color="dark">
+            <p>{{'CONFIG_LANG.radioText.language.fr'|translate}}</p>
+          </ion-text>
+          <ion-radio slot="end" value="fr"></ion-radio>
+        </ion-item>
+      </div>
+      
+    </ion-radio-group>
+    <div id="bottom-nav" (click)="goToNextScreen()">
+      <a>
+        <ion-button color="secondary" expand="block" fill="clear" shape="round">
+          {{'CONFIG_LANG.btnText.title'|translate}}
+          <ion-icon slot="end" name="chevron-forward-outline"></ion-icon>
+        </ion-button>
+      </a>
+    </div>
+  </div>
+</ion-content>

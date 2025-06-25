@@ -1,0 +1,44 @@
+.img-box {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.box-ctnt {
+    img {
+        width: 100px;
+        height: 100px;
+        border-radius: 100px;
+    }
+
+    ion-icon {
+       position: relative;
+       right: 0;
+       bottom: 0;
+    }
+}
+
+.input-box {
+    padding: 15px;
+    padding-bottom: 0;
+    span {
+      font-size: 1rem;
+      font-weight: 200;
+    }
+    ion-input {
+      --padding-top: 0;
+      --padding-bottom: 0;
+      --padding-start: 5px;
+      --padding-end: 5px;
+      font-size: 1rem;
+      font-weight: 200;
+    }
+}
+
+.input-tag {
+    margin-top: 8px;
+    padding: 10px;
+    // border-radius: 5px;
+    border-bottom: 1px solid rgb(146, 146, 146);
+}

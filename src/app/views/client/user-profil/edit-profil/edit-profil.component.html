@@ -1,0 +1,120 @@
+<app-header
+  boxStyle="background-color: var(--ion-color-primary)"
+  iconSize="large"
+  iconColor="light"
+  navigate="profil"
+  headerTitle="Edition de profil"
+  iconName="chevron-back-outline" >
+</app-header>
+<ion-content>
+  <form [formGroup]="userProfilForm" class="ion-padding">
+    <ion-row class="ion-padding-top">
+      <ion-col size="12">
+        <div class="img-box">
+          <div class="box-ctnt">
+            <img src="assets/images/user_img.png" title="user_img">
+            <ion-icon size="large" color="primary" slot="end" name="create-outline"></ion-icon>
+          </div>
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-row class="input-box">
+      <ion-col size="12" class="ion-no-padding">
+        <span>Nom</span>
+      </ion-col>
+      <ion-col size="12" class="input-tag">
+        <ion-input formControlName='nom' type="text" placeholder="Awesome Input"></ion-input>
+      </ion-col>
+    </ion-row>
+    <ion-row class="input-box">
+      <ion-col size="12" class="ion-no-padding">
+        <span>Prénom</span>
+      </ion-col>
+      <ion-col size="12" class="input-tag">
+        <ion-input  formControlName='prenom' type="text" placeholder="Awesome Input"></ion-input>
+      </ion-col>
+    </ion-row>
+    <ion-row class="input-box">
+      <ion-col size="12" class="ion-no-padding">
+        <span>Date de naissance</span>
+      </ion-col>
+      <ion-col size="12" class="input-tag">
+        <ion-input formControlName='dateNaiss' type="text" placeholder="Awesome Input"></ion-input>
+      </ion-col>
+    </ion-row>
+    <ion-row class="input-box">
+      <ion-col size="12" class="ion-no-padding">
+        <span>Lieu de naissance</span>
+      </ion-col>
+      <ion-col size="12" class="input-tag">
+        <ion-input formControlName='lieuNaiss' type="text" placeholder="Awesome Input"></ion-input>
+      </ion-col>
+    </ion-row>
+    <ion-row class="input-box">
+      <ion-col size="12" class="ion-no-padding">
+        <span>Nationalité</span>
+      </ion-col>
+      <ion-col size="12" class="input-tag">
+        <ion-input  formControlName='nationalite' type="text" placeholder="Awesome Input"></ion-input>
+      </ion-col>
+    </ion-row>
+    <ion-row class="input-box">
+      <ion-col size="12" class="ion-no-padding">
+        <span>Situation matrimoniale</span>
+      </ion-col>
+      <ion-col size="12" class="input-tag">
+        <ion-input  formControlName='situationMatri' type="text" placeholder="Awesome Input"></ion-input>
+      </ion-col>
+    </ion-row>
+    <ion-row class="input-box">
+      <ion-col size="12" class="ion-no-padding">
+        <span>Contact principal</span>
+      </ion-col>
+      <ion-col size="12" class="input-tag">
+        <ion-input  formControlName='telephone' type="text" placeholder="Awesome Input"></ion-input>
+      </ion-col>
+    </ion-row>
+    <ion-row class="input-box">
+      <ion-col size="12" class="ion-no-padding">
+        <span>Contact 1 </span>
+      </ion-col>
+      <ion-col size="12" class="input-tag">
+        <ion-input  formControlName='telephone1' type="text" placeholder="Awesome Input"></ion-input>
+      </ion-col>
+    </ion-row>
+    <ion-row class="input-box">
+      <ion-col size="12" class="ion-no-padding">
+        <span>Adresse Postale</span>
+      </ion-col>
+      <ion-col size="12" class="input-tag">
+        <ion-input  formControlName='adressPostal' type="text" placeholder="Awesome Input"></ion-input>
+      </ion-col>
+    </ion-row>
+    <ion-row class="input-box">
+      <ion-col size="12" class="ion-no-padding">
+        <span>Adresse email</span>
+      </ion-col>
+      <ion-col size="12" class="input-tag">
+        <ion-input  formControlName='adressEmail' type="text" placeholder="Awesome Input"></ion-input>
+      </ion-col>
+    </ion-row>
+    <ion-row class="input-box">
+      <ion-col size="12" class="ion-no-padding">
+        <span>Profession</span>
+      </ion-col>
+      <ion-col size="12" class="input-tag">
+        <ion-input  formControlName='profession' type="text" placeholder="Awesome Input"></ion-input>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12" class="ion-padding">
+        <ion-button
+            (click)="updateUserProfil()"
+            [disabled]="userProfilForm.invalid"
+            color="secondary" expand="block" >
+            <span style="color: var(--ion-color-white)">Sauvegarder</span>
+          </ion-button>
+      </ion-col>
+    </ion-row>
+  </form>
+</ion-content>

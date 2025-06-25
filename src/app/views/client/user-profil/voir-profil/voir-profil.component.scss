@@ -1,0 +1,43 @@
+ion-content {
+  --background: var(--ion-color-primary);
+}
+
+.img-box {
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.box-ctnt {
+  img {
+    width: 100px;
+    height: 100px;
+    border: 5px solid var(--ion-color-secondary);
+    border-radius: 100px;
+  }
+}
+
+#user-detail {
+  margin-top: -50px;
+  margin-left: 6%;
+  margin-right: 6%;
+  padding-top: 30px;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 1px 1px 4px rgb(182, 182, 182);
+}
+
+ion-text {
+  h3 {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 300;
+  }
+}
+
+.edit-btn {
+    border-radius: 8px;
+    text-decoration: none;
+}

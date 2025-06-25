@@ -1,0 +1,77 @@
+
+
+{
+   "param-ui-general": [
+      {
+         "ligne": "0",
+         "type": "DateTime",
+         "id": "dtDateNaissance",
+         "not-empty": "false",
+         "required": "true"
+      },
+      {
+         "ligne": "2",
+         "type": "Numeric",
+         "id": "txtAge",
+         "not-empty": "false",
+         "required": "true"
+      },
+      {
+         "ligne": "2",
+         "type": "DateTime",
+         "id": "dtDateEffet",
+         "not-empty": "false",
+         "required": "true"
+      },
+      {
+         "ligne": "3",
+         "type": "Numeric",
+         "id": "txtDuree",
+         "not-empty": "false",
+         "required": "true"
+      },
+      {
+         "ligne": "4",
+         "type": "DateTime",
+         "id": "dtDateEcheance",
+         "not-empty": "false",
+         "required": "true"
+      },
+      {
+         "ligne": "5",
+         "type": "ComboBox",
+         "id": "CbCapitalSouscrit",
+         "not-empty": "false",
+         "required": "true"
+      }
+   ],
+   "param-ui": [
+      {
+         "ligne": "0",
+         "id": "EpargneIndividuelle"
+      },
+      {
+         "ligne": "1",
+         "id": "Mixte",
+         "control": {
+            "ligne": "0",
+            "type": "ComboBox",
+            "id": "txtDureeRente",
+            "not-empty": "false",
+            "required": "true"
+         }
+      },
+      {
+         "ligne": "1",
+         "id": "EpargneProvoyanceIndividuelle",
+         "control": {
+            "ligne": "0",
+            "type": "ComboBox",
+            "id": "txtDureeRente",
+            "not-empty": "false",
+            "required": "true"
+         }
+      }
+   ]
+}
+

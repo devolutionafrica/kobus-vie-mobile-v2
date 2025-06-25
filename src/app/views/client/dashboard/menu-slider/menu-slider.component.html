@@ -1,0 +1,81 @@
+<ion-menu menuId="main-menu" content-id="menu">
+  <div id="menu-content">
+    <ion-content>
+      <div id="menu-box">
+        <div class="menu_box-header">
+          <h2>Menu</h2>
+          <img class="profil-img" src="assets/images/user_img.png">
+          <h3>{{userData.nom}}</h3>
+         <ion-row class="ion-justify-content-center ion-align-items-center">
+           <ion-col size="8">
+             <span>{{userData.filiale.filiale}}</span>
+            </ion-col>
+            <ion-col size="2">
+             <ion-img src="assets/country/{{filialeIcon}}"></ion-img>
+            </ion-col>
+         </ion-row>
+        </div>
+        <div class="menu_box_body">
+          <ion-row class="item-card"  (click)="onGoToProfil()" >
+            <ion-col size="2" >
+              <img src="assets/icon/ic_profile_96px.png" alt='title' />
+            </ion-col>
+            <ion-col size="10">
+              <span>Profil</span>
+            </ion-col>
+          </ion-row>
+          <ion-row class="item-card" (click)="onGoToProduct()" >
+            <ion-col size="2">
+              <img src="assets/icon/ic_store.png" alt='title' />
+            </ion-col>
+            <ion-col size="10">
+              <span>Nos produits</span>
+            </ion-col>
+          </ion-row>
+          <ion-row class="item-card" (click)="onGoToContrats()" >
+            <ion-col size="2">
+              <img src="assets/icon/ic_contrats.png" alt='title' />
+            </ion-col>
+            <ion-col size="10">
+              <span>Mes contrats</span>
+            </ion-col>
+          </ion-row>
+          <ion-row class="item-card" (click)="onGoToPropositions()" >
+            <ion-col size="2">
+              <img src="assets/icon/ic_propositions.png" alt='title' />
+            </ion-col>
+            <ion-col size="10">
+              <span>Mes propositions</span>
+            </ion-col>
+          </ion-row>
+          <ion-row class="item-card" (click)="onGoToServiceClient()" >
+            <ion-col size="2">
+              <img src="assets/icon/ic_service_client.png" alt='title' />
+            </ion-col>
+            <ion-col size="10">
+              <span>Service client</span>
+            </ion-col>
+          </ion-row>
+          <!-- <ion-row class="item-card" (click)="onGoToParams()" >
+            <ion-col size="2">
+              <img src="assets/icon/ic_tools.png" alt='title' />
+            </ion-col>
+            <ion-col size="10">
+              <span>Parametre</span>
+            </ion-col>
+          </ion-row> -->
+          <ion-row class="item-card menu-footer ion-align-items-center"  (click)="onDisconnect()">
+            <ion-col size="2">
+              <ion-icon color="primary" style="font-size: 2rem" name="log-out-outline"></ion-icon>
+            </ion-col>
+            <ion-col size="10">
+              <ion-col size="10">
+                <span color="danger">Se deconnecter</span>
+              </ion-col>
+            </ion-col>
+          </ion-row>
+        </div>
+      </div>
+    </ion-content>
+  </div>
+</ion-menu>

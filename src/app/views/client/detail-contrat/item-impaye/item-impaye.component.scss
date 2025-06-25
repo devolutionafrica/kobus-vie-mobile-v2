@@ -1,0 +1,43 @@
+#item-impaye-component {
+    padding: 2px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+
+    h3 {
+      margin: 0;
+      padding: 0;
+      font-size: 1.1rem !important;
+      font-weight: 200 !important;
+    }
+
+    span {
+      display: block;
+      font-size: .8rem !important;
+      font-weight: 200 !important;
+    }
+}
+
+.item-impaye-pending {
+  background-image: linear-gradient(to right bottom, #dadadafb, #dadadafb),
+                  url("../../../../../assets/images/impay-bg-vector.jpg");
+  // background-image: linear-gradient(to right bottom, #fffffffb, #fffffffb),
+  //                 url("../../../../../assets/images/impay-bg-vector.jpg");
+}
+
+.item-impaye {
+  background-color: #ffffff ;
+}
+
+.border-style {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  span {
+    padding: 0;
+    color: grey;
+    font-size: .8rem !important;
+    font-weight: 200 !important;
+    margin-right: 5px;
+  }
+}

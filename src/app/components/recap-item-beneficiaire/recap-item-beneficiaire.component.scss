@@ -1,0 +1,37 @@
+.item-subscribe {
+  padding-bottom: 5px;
+  border-bottom: 1px solid gray;
+}
+
+.body-item {
+  padding: 5px 0;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  span:nth-child(1){
+    color: rgba(61, 61, 61, 0.678);
+  }
+
+  span:nth-child(2){
+    color: #04274e;
+  }
+}
+
+.custom-elmts {
+  margin: 0;
+  padding: 0;
+  display: block;
+  font-size: 13px;
+  line-height: 135%;
+  color: rgba(61, 61, 61, 0.678) !important;
+}
+
+.bottom-lign {
+  border-bottom: 1px solid rgb(223, 223, 223);
+}
+
+.fullname-color {
+  font-weight: bold;
+}

@@ -1,0 +1,33 @@
+::ng-deep .swal2-input-label{
+  color: rgb(56, 56, 56);
+  padding: 0 1.3rem;
+  text-align: center;
+}
+
+::ng-deep .swal2-input {
+  color: rgb(56, 56, 56);
+}
+
+::ng-deep #pay-box .tab-value {
+  color: var(--ion-color-dark);
+}
+
+ion-item {
+  --border-style: none;
+  border-bottom: 1px solid var(--ion-color-dark);
+  margin-bottom: 16px;
+}
+
+.btn-submit {
+  button {
+    background-color: var(--ion-color-secondary);
+    color: var(--ion-color-white);
+  }
+}
+
+.box-center {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}

@@ -1,0 +1,97 @@
+
+* {
+    font-family: "AvenirNextLTPro-Regular";
+}
+
+.contrat-card {
+    margin: 10px 0;
+    width: 300px;
+    height: 180px;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 1px 6px 6px 6px rgba(10, 10, 10, 0.04);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    .card-header {
+        display: flex;
+        flex-direction: row-reverse;
+        jjustify-content: flex-start;
+        align-items: flex-start;
+
+        span:nth-child(1) {
+            color: rgba(243, 243, 243, 0.938);
+            font-size: 14px;
+        }
+        span:nth-child(2) {
+            color: rgb(255, 255, 255);
+            font-size: 16px;
+        }
+    }
+
+    .card-footer {
+      display: flex;
+      flex-direction: column;
+      jjustify-content: flex-start;
+      align-items: flex-start;
+
+      span:nth-child(1) {
+        color: rgb(255, 255, 255);
+        font-size: 16px;
+      }
+
+      span:nth-child(2) {
+        color: rgba(255, 255, 255, 0.849);
+        font-size: 10px;
+      }
+
+    }
+
+    .pay-img {
+      height: 60px;
+      width: 60px;
+      position: relative;
+      left: 190px;
+      bottom: 60px;
+      border-radius: 100%;
+    }
+
+    .card-body {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        margin: 0 0 12px 0;
+
+        h3 {
+            font-size: 18px;
+            color:rgb(255, 255, 255);
+        }
+
+        img {
+          width: 60px;
+          height: 60px;
+        }
+    }
+
+  }
+
+  #mtnTemplate {
+    background-image: linear-gradient(to right bottom, #f8d041f5, #f7c306f1),
+                  url("../../../../assets/images/background-2-stars-pattern-vector.jpg");
+  }
+
+  #overTemplate {
+    background-image: linear-gradient(to right bottom, #e2e2e2, #6b6b6bf5, #8f8f8f),
+                  url("../../../../assets/images/background-2-stars-pattern-vector.jpg");
+  }
+
+  #orangeTemplate {
+    background-image: linear-gradient(to right bottom,  #eec144f3, #f77d44f5),
+                  url("../../../../assets/images/background-2-stars-pattern-vector.jpg");
+  }
+
+  #moovTemplate {
+    background-image: linear-gradient(to right top,  #005ca8f8, #3f8bcae0 ),
+                  url("../../../../assets/images/background-2-stars-pattern-vector.jpg");
+  }

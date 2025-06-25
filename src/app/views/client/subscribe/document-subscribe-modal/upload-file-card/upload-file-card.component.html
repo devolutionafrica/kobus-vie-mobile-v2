@@ -1,0 +1,71 @@
+<div class="card">
+  <ion-card-header>
+    <ion-card-subtitle>Identité physique</ion-card-subtitle>
+    <ion-card-title>Piece d'identité</ion-card-title>
+  </ion-card-header>
+  <ion-card-content>
+    <div *ngIf="!isSelectedFile" class="box-user-picture">
+      <ion-list>
+        <ion-label>Type de piece</ion-label>
+        <ion-item>
+          <ion-select
+            okText="Valider"
+            multiple="false"
+            (ionChange)="selectedFilePath($event)"
+            placeholder="Choix de piece"
+            cancelText="Annuler">
+            <ion-select-option *ngFor="let itemPiece of typePieces" [value]="itemPiece">
+              {{itemPiece.value}}
+            </ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-list>
+    </div>
+    <div *ngIf="isSelectedFile">
+      <div id="user_photo" *ngIf="isResizePicture">
+        <img [src]="cropperImage" alt="" srcset="">
+      </div>
+      <image-cropper
+        *ngIf="!isResizePicture"
+        [imageBase64]="photoIdentitePath"
+        [maintainAspectRatio]="true"
+        [aspectRatio]="3/4"
+        format="jpg"
+        (imageCropped)="imageCropped($event)">
+      </image-cropper>
+    </div>
+     <ion-row *ngIf="isSelectedFile">
+      <ion-col size="6">
+        <ion-button (click)="launchCamera()" expand="block" fill="clear" color="primary" shape="round">
+          <span>
+            <ion-icon size="large" name="camera-outline"></ion-icon>
+          </span>
+        </ion-button>
+      </ion-col>
+      <ion-col size="6">
+        <ion-button
+          *ngIf="isTakePicture"
+          (click)="validateIdentitePhoto()"
+          expand="block" fill="clear" color="secondary" shape="round">
+          <span>
+            <ion-icon size="large" name="checkmark-outline"></ion-icon>
+          </span>
+        </ion-button>
+        <ion-button
+          *ngIf="!isCompleted && isResizePicture"
+          (click)="takeVersoPicture()"
+          color="primary" expand="block" fill="solid" color="secondary" shape="round">
+          Verso
+          <ion-icon style="color: var(--ion-color-white);" slot="end" name="chevron-forward-outline"></ion-icon>
+        </ion-button>
+        <ion-button
+          *ngIf="isCompleted && isResizePicture"
+          (click)="onNext()"
+          color="primary" expand="block" fill="solid" color="secondary" shape="round">
+          Continuer
+          <ion-icon style="color: var(--ion-color-white);" slot="end" name="chevron-forward-outline"></ion-icon>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-card-content>
+</div>

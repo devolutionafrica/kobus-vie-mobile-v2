@@ -1,0 +1,19 @@
+<ion-row class="benef-style ion-justify-content-center ion-align-items-center">
+  <ion-col size="10">
+    <ion-row class="ion-justify-content-center ion-align-items-center">
+      <ion-col size="9">
+        <ion-text color="primary">
+          <span>{{beneficiareFullname}}</span>
+        </ion-text>
+      </ion-col>
+      <ion-col size="3">
+        <span class="taux-rep">{{beneficiaireJsonObject.Repartition}} %</span>
+      </ion-col>
+    </ion-row>
+  </ion-col>
+  <ion-col size="2" class="btn-close">
+    <div (click)="onPopBenef()">
+      <ion-icon class="rmve-icon" size="large"color="primary"  slot="start" name="trash-outline"></ion-icon>
+    </div>
+  </ion-col>
+</ion-row>

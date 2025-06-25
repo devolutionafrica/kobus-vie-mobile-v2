@@ -1,0 +1,26 @@
+#alert-card {
+  width: 97%;
+  padding: .5rem;
+  margin: 1.5%;
+  min-height: 5rem;
+  border-radius: .6rem;
+  // box-shadow: 0.5px 1px 10px var(--ion-color-dark-tint);
+}
+
+.success {background-color: var(--ion-color-success-shade) !important;}
+.error {background-color: var(--ion-color-danger-shade) !important;}
+.warn {background-color: var(--ion-color-warning-shade) !important;}
+.default {background-color: var(--ion-color-secondary) !important;}
+
+span {
+  width: 100%;
+  color: var(--ion-color-white);
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+p {
+  color: var(--ion-color-white);
+  font-weight: 200;
+  font-size: .95rem;
+}

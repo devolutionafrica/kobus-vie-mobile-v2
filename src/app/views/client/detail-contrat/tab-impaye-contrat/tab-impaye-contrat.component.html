@@ -1,0 +1,48 @@
+<ng-container *ngIf="isEmpty; else impayeList">
+  <div class="empty-content-box">
+    <lottie-player
+      autoplay
+      loop
+      count="-1"
+      style='width:200px'
+      src="../assets/lotties/lot_good_job.json"
+      speed='1'>
+    </lottie-player>
+    <h1>Bravo!</h1>
+    <h3>
+      Vous n'avez pas d'Impayés pour ce contrat.
+    </h3>
+  </div>
+</ng-container>
+<ng-template #impayeList>
+  <ion-row class="ion-align-items-center ion-padding">
+    <ion-col size="10" >
+      <ion-row class="ion-align-items-center">
+        <div (click)="openPanier()" id="panier-box">
+          <ion-text color="primary">
+            <span>{{'DETAIL_CONTRAT_SCREEN.tableSlider.slideImpaye.content.btnPanier'|translate}}</span>
+          </ion-text>
+          <mat-icon
+            matBadge={{countImpayee}}
+            matBadgeSize="medium"
+            matBadgeHidden={{false}}
+            matBadgePosition="after"
+            matBadgeColor="warn">
+            <ion-icon color="light" size="large" name="cart-outline"></ion-icon>
+          </mat-icon>
+        </div>
+      </ion-row>
+    </ion-col>
+    <ion-col size="2" (click)="toggleSelect()">
+      <ion-checkbox color="secondary" checked={{selectAll}}></ion-checkbox>
+    </ion-col>
+  </ion-row>
+  <div class="list-box">
+    <app-item-impaye
+      (childEvent)="executeChildAction($event)"
+      *ngFor="let impaye of listImpaye"
+      [selectInput]='actionChecked'
+      [data]='impaye'>
+    </app-item-impaye>
+  </div>
+</ng-template>

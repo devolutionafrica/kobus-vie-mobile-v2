@@ -1,0 +1,124 @@
+<app-menu-slider *ngIf="userData" [userData]="userData"></app-menu-slider>
+<ion-content id="menu" >
+  <div id="header-box">
+    <ion-row class="menu-bar ion-align-items-center" [ngClass]="{'ios-header' : platformValue === 'ios'}">
+      <ion-col size="2">
+        <div>
+          <ion-buttons slot="start">
+            <ion-menu-button menu="main-menu">
+              <ion-icon size="large" color="light" name="menu-outline"></ion-icon>
+            </ion-menu-button>
+          </ion-buttons>
+        </div>
+      </ion-col>
+      <ion-col size="7" style="display: flex;justify-content: center;">
+        <ion-img style="width: 99px;" src="assets/icon/logolight.png"></ion-img>
+      </ion-col>
+      <ion-col size="3">
+        <ion-row>
+          <ion-col size="6">
+            <mat-icon matBadgeHidden={{matBadgeHiddenProposition}} matBadge={{propositionNumber}} matBadgeColor="warn">
+              <ion-icon (click)="moveToProposition()" size="large" color="light" name="card-outline"></ion-icon>
+            </mat-icon>
+          </ion-col>
+          <ion-col size="6">
+            <mat-icon matBadgeHidden={{matBadgeHiddenPanier}} matBadge={{payListNumber}} matBadgeColor="warn">
+              <ion-icon (click)="openPanier()" size="large" color="light" name="cart-outline"></ion-icon>
+            </mat-icon>
+          </ion-col>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+    <div id="user-info">
+      <ion-text>
+        <h2 style="color: var(--ion-color-primary-contrast);">{{userData?.nom}} {{userData?.prenom}}</h2>
+        <span>Bienvenue sur votre espace client</span>
+      </ion-text>
+    </div>
+  </div>
+  <app-carrousel-product></app-carrousel-product>
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content
+      pullingIcon="chevron-down-circle-outline"
+      pullingText="Glissez vers le bas pour actualiser"
+      refreshingSpinner="circles"
+      refreshingText="Actualisation des données">
+    </ion-refresher-content>
+  </ion-refresher>
+  <ion-row id="graph-box">
+    <app-dashboard-card
+      label='Impayés'
+      (action)='goToImpayes()'
+      icon='wallet-outline'
+      [number]='bilanGraphData?.numberImpaye' >
+    </app-dashboard-card>
+    <app-dashboard-card
+      label='Contrats'
+      (action)='goToContrats()'
+      icon='document-text-outline'
+      [number]='bilanGraphData?.numberContrats' >
+    </app-dashboard-card>
+    <!-- <app-dashboard-card
+      label='Prestations'
+      icon='briefcase-outline'
+      [number]='bilanGraphData?.numberPrestation' >
+    </app-dashboard-card>
+    <app-dashboard-card
+      label='Réglements'
+      icon='card-outline'
+      [number]='0' >
+    </app-dashboard-card> -->
+  </ion-row>
+  <ion-row id="static-box">
+    <ion-col size="12" id="static-graph">
+      <circle-progress
+        [percent]="bilanGraphData?.tauxEngagement"
+        [subtitle]="'Engagements'"
+        [subtitleFontSize]='"30"'
+        [radius]='100'
+        [renderOnClick]="false"
+        [responsive]="true"
+        [class]="'circle-els'"
+        [imageWidth]='5'
+        [imageHeight]='5'
+        [titleFontSize]='"34"'
+        [unitsFontSize]='"32"'
+        [backgroundColor]="'#fffaf2'"
+        [subtitleFontSize]='"15"'
+        [outerStrokeWidth]='13'
+        [innerStrokeWidth]='6'
+        [outerStrokeColor]="'var(--ion-color-secondary)'"
+        [innerStrokeColor]="'#6f98c7'"
+        [animation]="true"
+        [animationDuration]='300'
+        (onClick)="goToImpayes()">
+      </circle-progress>
+    </ion-col>
+    <ion-col size="12" id="static-value">
+      <ion-row>
+        <ion-col size="6">
+          <ion-row class="ion-align-items-center">
+            <ion-col size="2">
+              <span class="marker" style="background-color: var(--ion-color-secondary);"></span>
+            </ion-col>
+            <ion-col size="10">
+              <h3>Engagements</h3>
+              <!-- <span>{{bilanGraphData.totalPrime|number}} {{filiale.devise}}</span> -->
+            </ion-col>
+          </ion-row>
+        </ion-col>
+        <ion-col size="6">
+          <ion-row class="ion-align-items-center">
+            <ion-col size="2">
+              <span class="marker" style="background-color: #6f98c7;"></span>
+            </ion-col>
+            <ion-col size="10">
+              <h3>Cotisations</h3>
+              <!-- <span>{{bilanGraphData.totalPrime|number}} {{filiale.devise}}</span> -->
+            </ion-col>
+          </ion-row>
+        </ion-col>
+      </ion-row>
+    </ion-col>
+  </ion-row>
+</ion-content>

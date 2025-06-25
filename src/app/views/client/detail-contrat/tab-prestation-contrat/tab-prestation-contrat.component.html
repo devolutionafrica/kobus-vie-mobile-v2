@@ -1,0 +1,36 @@
+<div class="tab-detail-box">
+  <ng-container *ngIf="prestationEmpty; else prestationList">
+   <div id="empty_box">
+    <lottie-player
+      autoplay
+      loop
+      count="-1"
+      style='width:200px'
+      src="../assets/lotties/lot_empty_file.json"
+      speed='1'>
+    </lottie-player>
+    <p>Vous n'avez pas de demande en cours </p>
+    <!-- <span style="text-align: center;" (click)="addNewPrestation()">
+      Nouvelle prestation <ion-icon style="font: center;" name="create-outline" ></ion-icon>
+    </span> -->
+   </div>
+  </ng-container>
+  <ng-template #prestationList>
+    <div id="btn-add-prest">
+      <ion-icon (click)="addNewPrestation()" color="secondary" size="large" name="bag-add-outline"></ion-icon>
+      <ion-text color="primary">
+        <h3>{{'DETAIL_CONTRAT_SCREEN.tableSlider.slidePrestation.content.btnText'|translate}}</h3>
+      </ion-text>
+    </div>
+    <div id="tab-prsnt-prest">
+      <div id="tab-prst-header">
+        <span>{{'DETAIL_CONTRAT_SCREEN.tableSlider.slidePrestation.content.leftText'|translate}}</span>
+        <span>{{'DETAIL_CONTRAT_SCREEN.tableSlider.slidePrestation.content.rightText'|translate}}</span>
+      </div>
+      <app-item-prestation
+        *ngFor="let prestation of prestations"
+        [data]='prestation'
+      ></app-item-prestation>
+    </div>
+  </ng-template>
+</div>

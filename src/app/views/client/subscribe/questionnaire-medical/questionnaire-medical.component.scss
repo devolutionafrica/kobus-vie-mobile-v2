@@ -1,0 +1,142 @@
+/**
+ * ----------------------------------------
+ * animation wobble-hor-bottom
+ * ----------------------------------------
+ */
+ @-webkit-keyframes wobble-hor-bottom {
+  0%,
+  100% {
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+    -webkit-transform-origin: 50% 50%;
+            transform-origin: 50% 50%;
+  }
+  15% {
+    -webkit-transform: translateX(-30px) rotate(-6deg);
+            transform: translateX(-30px) rotate(-6deg);
+  }
+  30% {
+    -webkit-transform: translateX(15px) rotate(6deg);
+            transform: translateX(15px) rotate(6deg);
+  }
+  45% {
+    -webkit-transform: translateX(-15px) rotate(-3.6deg);
+            transform: translateX(-15px) rotate(-3.6deg);
+  }
+  60% {
+    -webkit-transform: translateX(9px) rotate(2.4deg);
+            transform: translateX(9px) rotate(2.4deg);
+  }
+  75% {
+    -webkit-transform: translateX(-6px) rotate(-1.2deg);
+            transform: translateX(-6px) rotate(-1.2deg);
+  }
+}
+@keyframes wobble-hor-bottom {
+  0%,
+  100% {
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+    -webkit-transform-origin: 50% 50%;
+            transform-origin: 50% 50%;
+  }
+  15% {
+    -webkit-transform: translateX(-30px) rotate(-6deg);
+            transform: translateX(-30px) rotate(-6deg);
+  }
+  30% {
+    -webkit-transform: translateX(15px) rotate(6deg);
+            transform: translateX(15px) rotate(6deg);
+  }
+  45% {
+    -webkit-transform: translateX(-15px) rotate(-3.6deg);
+            transform: translateX(-15px) rotate(-3.6deg);
+  }
+  60% {
+    -webkit-transform: translateX(9px) rotate(2.4deg);
+            transform: translateX(9px) rotate(2.4deg);
+  }
+  75% {
+    -webkit-transform: translateX(-6px) rotate(-1.2deg);
+            transform: translateX(-6px) rotate(-1.2deg);
+  }
+}
+
+
+::ng-deep .medical-quiz-modal-style .ion-page {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
+  background-color: transparent;
+}
+
+::ng-deep .medical-quiz-modal-style .modal-wrapper {
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: absolute;
+  background-color: transparent;
+}
+
+::ng-deep #medical-quiz-modal-style {
+  width: 80%;
+  height: auto;
+  margin: 20% 0;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: var(--ion-color-white);
+
+  -webkit-animation: wobble-hor-bottom 0.8s both;
+	        animation: wobble-hor-bottom 0.8s both;
+}
+
+
+
+.medical-quiz-image {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+
+  .quiz img {
+    width: auto;
+    height: 90px;
+  }
+
+  .resp img {
+    width: auto;
+    height: 80px;
+  }
+}
+
+.question-tag {
+
+  h3 {
+    margin: 0;
+    margin-top: 12px;
+    font-weight: 300;
+    margin-bottom: 8px;
+    color: rgba(0, 0, 0, 0.972);
+  }
+
+  p {
+    color: #3f3f3f;
+    font-size: 17px;
+    text-align: center;
+    padding: 0 14px;
+    font-weight: 200;
+    margin-top: 20px;
+  }
+}
+
+ion-progress-bar {
+  height: 13px;
+  padding: 2px;
+  border-radius: 8px;
+}

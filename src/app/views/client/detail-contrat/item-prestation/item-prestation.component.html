@@ -1,0 +1,12 @@
+<div class="prest-item">
+  <div class="price-box">
+    <span>{{data.demandeOperation}}</span>
+    <span>
+      {{'DETAIL_CONTRAT_SCREEN.tableSlider.slidePrestation.content.itemPrestation.date'|translate}}
+      {{data.dateOuverture|date:'dd/MM/yyyy'}}</span>
+  </div>
+  <div class="title-box">
+    <span>{{data.montantBrut}} {{devise}}</span>
+    <ion-icon size="large" slot="start" name="card-outline"></ion-icon>
+  </div>
+</div>

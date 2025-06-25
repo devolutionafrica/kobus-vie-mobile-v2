@@ -1,0 +1,46 @@
+<form [formGroup]="payForm"  class="ion-padding">
+  <ion-row class="input-box">
+    <ion-col size="12" class="ion-no-padding">
+      <span>Numero de téléphone <strong color="#ff9100">( {{operatorSelected._operateur}} )</strong></span>
+    </ion-col>
+    <ion-item>
+      <ion-icon color="dark" slot="start" name="call-outline"></ion-icon>
+      <ion-input [disabled]="this.isLunched" color="dark" formControlName="phoneNumber" type="tel" placeholder="Exemple : {{userProfil?.telephone}}"></ion-input>
+    </ion-item>
+  </ion-row>
+  <ion-row *ngIf="integrator !== 'Hub2' && operatorSelected._needOTP" class="input-box">
+    <ion-col size="12" class="ion-no-padding">
+      <span>Code OTP <strong color="#ff9100"></strong></span>
+    </ion-col>
+    <ion-item>
+      <ion-icon color="dark" slot="start" name="key-outline"></ion-icon>
+      <ion-input [disabled]="this.isLunched" color="dark" formControlName="codeOTP" type="string" placeholder="Exemple : 0102"></ion-input>
+    </ion-item>
+  </ion-row>
+  <table matSort >
+    <tr>
+      <td>Total</td>
+      <td class="tab-value">{{cashData.amount | number}} {{devise}}</td>
+    </tr>
+    <tr>
+      <td>Mode de paiement</td>
+      <td class="tab-value">Mobile Money ( {{operatorSelected._operateur}} )</td>
+    </tr>
+    <tr>
+      <td>Contact </td>
+      <td class="tab-value">{{phoneNumber.value}}</td>
+    </tr>
+  </table>
+  <div class="btn-submit" *ngIf="!isLunched">
+    <button
+      [disabled]='payForm.invalid'
+      (click)="onPayOperation()"
+      mat-raised-button>
+      <ion-icon size="large" color="white" name="card-outline"></ion-icon>
+      Finaliser votre operation</button>
+  </div>
+  <div class="btn-submit box-center" *ngIf="isLunched">
+    <ng-lottie *ngIf="!payStatut" [options] = "loadingAnimationOptions"></ng-lottie>
+    <ng-lottie *ngIf="payStatut" [options] = "validateAnimationOptions"></ng-lottie>
+  </div>
+</form>

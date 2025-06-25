@@ -1,0 +1,66 @@
+<div [ngSwitch]="operator" >
+  <div *ngSwitchCase=" 'OR' ">
+    <div id="orangeTemplate" class="contrat-card"  (click)="getContratDetail()">
+      <div class="card-header">
+        <span>operateur</span>
+      </div>
+      <div class="card-body">
+        <h3>{{payData._operateur}}</h3>
+        <img src="assets/icon/ic_chip_card_96px.png" alt="" srcset="">
+      </div>
+      <div class="card-footer">
+        <span>{{payData._indicatifPays}} XX-XX-XX-XX</span>
+        <span>service de paiement mobile</span>
+        <img class="pay-img" src="assets/images/ic_credit.png" alt="" srcset="">
+      </div>
+    </div>
+  </div>
+  <div *ngSwitchCase=" 'MTN' ">
+    <div id="mtnTemplate" class="contrat-card"  (click)="getContratDetail()">
+      <div class="card-header">
+        <span>Mode de paiement</span>
+      </div>
+      <div class="card-body">
+        <h1>{{payData._operateur}}</h1>
+        <img src="assets/icon/ic_chip_card_96px.png" alt="" srcset="">
+      </div>
+      <div class="card-footer">
+        <span>{{payData._indicatifPays}} XX-XX-XX-XX</span>
+        <span>service de paiement mobile</span>
+        <img class="pay-img" src="assets/images/ic_credit.png" alt="" srcset="">
+      </div>
+    </div>
+  </div>
+  <div *ngSwitchCase=" 'MOOV' ">
+    <div id="moovTemplate" class="contrat-card"  (click)="getContratDetail()">
+      <div class="card-header">
+        <span>Mode de paiement</span>
+      </div>
+      <div class="card-body">
+        <h1>{{payData._operateur}}</h1>
+        <img src="assets/icon/ic_chip_card_96px.png" alt="" srcset="">
+      </div>
+      <div class="card-footer">
+        <span>{{payData._indicatifPays}} XX-XX-XX-XX</span>
+        <span>service de paiement mobile</span>
+        <img class="pay-img" src="assets/images/ic_credit.png" alt="" srcset="">
+      </div>
+    </div>
+  </div>
+  <div *ngSwitchDefault>
+    <div id="overTemplate" class="contrat-card"  (click)="getContratDetail()">
+      <div class="card-header">
+        <span>Mode de paiement</span>
+      </div>
+      <div class="card-body">
+        <h1>{{payData._operateur}}</h1>
+        <img src="assets/icon/ic_chip_card_96px.png" alt="" srcset="">
+      </div>
+      <div class="card-footer">
+        <span>{{payData._indicatifPays}} XX-XX-XX-XX</span>
+        <span>service de paiement mobile</span>
+        <img class="pay-img" src="assets/images/ic_credit.png" alt="" srcset="">
+      </div>
+    </div>
+  </div>
+</div>

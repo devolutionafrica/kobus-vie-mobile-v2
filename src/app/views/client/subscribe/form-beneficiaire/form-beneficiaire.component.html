@@ -1,0 +1,114 @@
+<div id="list-benef">
+  <ng-container *ngIf="beneficiaires.length > 0 ; else EmptyList">
+    <app-item-beneficier
+      (editEvent$)="actionEditing($event)"
+      *ngFor="let beneficiare of beneficiaires"
+      [beneficiaireJsonObject]='beneficiare'
+      [typeBeneficiaires]='beneficiaresType' >
+    </app-item-beneficier>
+  </ng-container>
+  <ng-template #EmptyList>
+    <span>Vous n'avez encore aucun bénéficiaire</span>
+  </ng-template>
+  <div *ngIf="repartitionRest > 0">
+    <ng-container *ngIf="toggleFormBenef; else enableformBenef">
+      <div id="btnAddBenef">
+        <ion-icon
+          (click)="openForm()"
+          color="secondary"
+          size="large"
+          slot="center"
+          name="add">
+        </ion-icon>
+      </div>
+    </ng-container>
+  </div>
+  <ng-template #enableformBenef>
+    <div *ngIf="repartitionRest > 0" id="formBeneficiaire" [formGroup]="formBenef">
+      <div class="input_box">
+        <span>Type de bénéficiaire <strong>*</strong> </span>
+        <ion-list>
+          <ion-item>
+            <ion-icon size="small" color="primary" slot="start" name="list-outline"></ion-icon>
+            <ion-select  placeholder="Exemple : {{beneficiaresType[0].libelle}}" formControlName="typeBeneficiaire" multiple="false" [value]="typeBeneficiaire.value" okText="Valider" cancelText="Annuler">
+              <ion-select-option  *ngFor="let beneficiaire of beneficiaresType" [value]="beneficiaire.id">{{beneficiaire.libelle}}</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-list>
+      </div>
+      <div class="input_box">
+        <span>Repartition ({{tauxRepartition.value}} %) <strong >*</strong></span>
+        <ion-range pin="true" formControlName="tauxRepartition" min="0" max="{{repartitionRest}}" step="1">
+          <ion-label slot="start">0 %</ion-label>
+          <ion-label slot="end">{{repartitionRest}} %</ion-label>
+        </ion-range>
+      </div>
+      <ng-container *ngIf="typeBeneficiaire.value === 'Autre'" >
+        <div id="overForm" [formGroup]="autresFormBenef" >
+          <ion-row>
+            <ion-col size-sm="6" size-xs="12" class="form-item">
+              <span>Nom <strong>*</strong> </span>
+              <ion-item>
+                <ion-icon size="small" color="dark" slot="start" name="person-outline"></ion-icon>
+                <ion-input formControlName="nom" color="dark" type="text" placeholder="Nom du bénéficiaire"></ion-input>
+              </ion-item>
+            </ion-col>
+            <ion-col size-sm="6" size-xs="12" class="form-item">
+              <span>Prénom <strong>*</strong> </span>
+              <ion-item>
+                <ion-icon size="small" color="dark" slot="start" name="person-outline"></ion-icon>
+                <ion-input formControlName="prenom" color="dark" type="text" placeholder="Prénom du bénéficiaire"></ion-input>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col size-sm="6" size-xs="12" class="form-item">
+              <span>Date de naissance <strong>*</strong> </span>
+              <ion-item>
+                <ion-icon size="small" color="dark" slot="start" name="calendar-number-outline"></ion-icon>
+                <ion-input formControlName="dateNaissance" color="dark" type="date" placeholder="Date de naissance"></ion-input>
+              </ion-item>
+            </ion-col>
+            <ion-col size-sm="6" size-xs="12" class="form-item">
+              <span>Lieu de naissance <strong>*</strong> </span>
+              <ion-item>
+                <ion-icon size="small" color="dark" slot="start" name="location-outline"></ion-icon>
+                <ion-input formControlName="lieuNaissance" color="dark" type="text" placeholder="Lieu de naissance"></ion-input>
+              </ion-item>
+            </ion-col>
+            <ion-col size-sm="6" size-xs="12" class="form-item">
+              <span>Contact <strong>*</strong> </span>
+              <ion-item>
+                <ion-icon size="small" color="dark" slot="start" name="call-outline"></ion-icon>
+                <ion-input formControlName="contact" color="dark" type="text" placeholder="Contact "></ion-input>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+        </div>
+      </ng-container>
+      <ng-container *ngIf="typeBeneficiaire.value === 'Autre'; else overForm">
+        <ion-button
+          [disabled]="autresFormBenef.invalid"
+          (click)="onAddBenef()"
+          color="secondary"
+          expand="block">
+            <ion-text color="light">
+              Ajouter
+            </ion-text>
+        </ion-button>
+      </ng-container>
+      <ng-template #overForm>
+        <ion-button
+          [disabled]="formBenef.invalid"
+          (click)="onAddBenef()"
+          color="secondary"
+          expand="block">
+            <ion-text color="light">
+              Ajouter
+            </ion-text>
+        </ion-button>
+      </ng-template>
+    </div>
+  </ng-template>
+</div>
+

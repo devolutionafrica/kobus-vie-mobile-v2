@@ -1,0 +1,38 @@
+<div class="proposition-content">
+  <ion-row class="proposition-body" (click)="openModal()">
+    <ion-col size="2" >
+      <img src="assets/icon/ic_propositions.png" alt="" srcset="">
+    </ion-col>
+    <ion-col size="8">
+      <ion-row>
+        <ion-col size="12" class="ion-no-padding">
+          <span class="title">{{data.libelleProduit|uppercase}}</span>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="6" class="ion-no-padding">
+          <span>N°Prestation</span>
+        </ion-col>
+        <ion-col size="6" class="ion-no-padding">
+          <span>{{data.numeroProposition}}</span>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="6" class="ion-no-padding">
+          <span>Date d'effet</span>
+        </ion-col>
+        <ion-col size="6" class="ion-no-padding">
+          <span>{{data.dateEffet | date:'dd/MM/yyyy'}}</span>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="12" class="ion-no-padding">
+          <span style="color:#696969; font-size: 10px;" >Crée le {{data.dateEmission | date:'dd/MM/yyyy'}}</span>
+        </ion-col>
+      </ion-row>
+    </ion-col>
+    <ion-col size="2">
+      <ion-icon size="large" name="hourglass-outline"></ion-icon>
+    </ion-col>
+  </ion-row>
+</div>

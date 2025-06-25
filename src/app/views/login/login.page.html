@@ -1,0 +1,91 @@
+<ion-content [fullscreen]="true" >
+  <div id="header_page" [ngClass]="{'ios-header' : platformValue === 'ios'}">
+    <ion-row class="ion-no-padding" >
+      <ion-col size="8">
+        <ion-row class="ion-align-items-center">
+          <ion-col size="10" class="ion-padding-start">
+            <ion-row class="ion-align-items-center">
+              <ion-col size="3">
+                <img (click)="presentConfigModal()" src="assets/country/{{filialeSelected.icon}}" alt="" srcset="">
+              </ion-col>
+              <ion-col size="9">
+                <span>{{filialeSelected.filiale}}</span>
+              </ion-col>
+            </ion-row>
+          </ion-col>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+  </div>
+  <ion-grid>
+    <ion-row class="ion-justify-content-center ion-align-items-center">
+      <ion-col size-xs="12" size-sm="6">
+        <ion-row class="ion-justify-content-center ion-align-items-center">
+          <ion-img src="assets/icon/{{appLogo}}"></ion-img>
+        </ion-row>
+      </ion-col>
+      <ion-col size-xs="12" size-sm="6">
+        <form [formGroup]="loginForm">
+          <ion-text color="dark" class="ion-text-center">
+            <h3>{{'LOGIN_SCREEN.layoutText.title'|translate}}</h3>
+          </ion-text>
+          <ion-item>
+            <ion-icon color="dark" slot="start" name="person-outline"></ion-icon>
+            <ion-input required='true' formControlName="username" color="dark" type="text" placeholder="{{'LOGIN_SCREEN.formText.inputText.username.placeholder'|translate}}"></ion-input>
+          </ion-item>
+          <div *ngIf="username.invalid && (username.dirty || username.touched)" class="alert">
+            <ion-text color="danger" *ngIf="username.errors.required">
+              Vous devez saisir un identifiant correct
+            </ion-text>
+            <ion-text color="danger" *ngIf="username.errors.minlength">
+              Vous devez saisir un mot de passe correct
+            </ion-text>
+          </div>
+          <ion-item>
+            <ion-icon color="dark" slot="start" name="key-outline"></ion-icon>
+            <ion-input required='true' formControlName="password" color="dark" [type]="passwordType" placeholder="{{'LOGIN_SCREEN.formText.inputText.password.placeholder'|translate}}"></ion-input>
+            <ion-icon *ngIf="!showPassword" color="dark" slot="end" name="eye-outline" (click)="showToggle()"></ion-icon>
+            <ion-icon *ngIf="showPassword" color="dark" slot="end" name="eye-off-outline" (click)="showToggle()"></ion-icon>
+          </ion-item>
+          <div *ngIf="password.invalid && (password.dirty || password.touched)" class="alert">
+            <ion-text color="danger" *ngIf="password.errors.required">
+              Vous devez saisir un mot de passe correct
+            </ion-text>
+            <ion-text color="danger" *ngIf="password.errors.minlength">
+              Vous devez saisir un mot de passe d'au moins 6 caracteres
+            </ion-text>
+          </div>
+          <button
+            class="btn-style" style="background-color: var(--ion-color-secondary) !important;"
+            (click)="onAuthentify()"
+            [disabled]="invalidForm" palemat-flat-button color="dark">
+            <ion-icon slot="start" name="log-in-outline" style="color: var(--ion-color-white)"></ion-icon>
+            <span class="ion-padding" style="color: var(--ion-color-white)">{{'LOGIN_SCREEN.formText.btnText.btnSingin'|translate}}</span>
+          </button>
+          <div class="ligne-tag">
+            <span>Ou</span>
+            <hr size="15" width="100%">
+          </div>
+          <button
+            class="btn-style" style="background-color: var(--ion-color-primary) !important;"
+            (click)="presentInitSubscribeModal()"
+            mat-flat-button color="accent" >
+            <ion-icon slot="start" name="document-outline"></ion-icon>
+            <span class="ion-padding" style="color: var(--ion-color-white)">{{'LOGIN_SCREEN.formText.btnText.btnSubscribe'|translate}}</span>
+          </button>
+          <ion-text color="dark" class="ion-text-center">
+            <p style="margin: 25px 0">{{'LOGIN_SCREEN.footerText.text'|translate}}<a [routerLink]="[ '/recup-compte' ]">{{'LOGIN_SCREEN.footerText.simpleAction'|translate}}</a></p>
+          </ion-text>
+        </form>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <div id="proposition_box">
+    <button
+      (click)="openProposition()"
+      mat-mini-fab
+      aria-label="">
+      <ion-icon slot="start" name="document-outline"></ion-icon>
+    </button>
+  </div>
+</ion-content>

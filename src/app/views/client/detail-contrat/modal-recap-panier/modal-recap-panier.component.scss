@@ -1,0 +1,86 @@
+::ng-deep #modal-recap-panier-cmp {
+    margin: 0;
+    width: 100%;
+    border-radius: 8px;
+    background-color: var(--ion-color-white);
+}
+
+::ng-deep .modal-recap-panier-cmp .ion-page {
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    justify-content: flex-end;
+    background: transparent;
+}
+
+::ng-deep .sc-ion-modal-md-h {
+    --background : transparent !important
+}
+
+::ng-deep .sc-ion-modal-ios-h {
+    --background : transparent !important
+}
+
+::ng-deep .verification-modal-style .modal-wrapper {
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: absolute;
+    background-color: transparent;
+}
+
+#empty_panier_box {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+
+    span {
+        display: block;
+        font-size: 17px;
+        color: rgb(47, 47, 47);
+    }
+
+    ion-icon {
+        width: 60px;
+        height: 60px;
+        margin-bottom: 10px;
+        color: rgb(161, 77, 77);
+    }
+}
+
+#recap-payee {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #fff;
+}
+
+#list_impaye {
+    padding-bottom: 85px !important;
+}
+
+#btn_pay {
+    padding: 0 30px;
+    border-radius: 8px;
+    background-color: var(--ion-color-secondary);
+
+    span {
+        font-size: 18.5px;
+        font-weight: bold;
+    }
+
+    ion-icon {  margin-left: 20px; }
+}
+
+::ng-deep #modal-recap-panier-cmp ion-content {
+    height: 500px;
+}
+
+.ios-header {
+  padding-top: 1.40rem !important;
+}
+

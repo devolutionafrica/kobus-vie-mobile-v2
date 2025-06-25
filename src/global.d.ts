@@ -1,0 +1,1 @@
+declare function renderPaymentBtns(options: any): void;

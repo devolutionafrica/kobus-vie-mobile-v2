@@ -1,0 +1,48 @@
+<div class="card">
+  <ion-card-header>
+    <ion-card-subtitle>Identité physique</ion-card-subtitle>
+    <ion-card-title>Photo d'identité</ion-card-title>
+  </ion-card-header>
+  <ion-card-content>
+    <image-cropper
+      *ngIf="!isLoadFile"
+      [imageBase64]="photoIdentitePath"
+      [maintainAspectRatio]="true"
+      [aspectRatio]="3/4"
+      format="jpeg"
+      (imageCropped)="imageCropped($event)">
+    </image-cropper>
+    <div id="user_photo" *ngIf="isLoadFile">
+      <img [src]="cropperImage" alt="" srcset="">
+    </div>
+    <div *ngIf="!cropperImage" class="box-user-picture">
+      <img src="assets/icon/ic_selfie.png" alt="" srcset="">
+    </div>
+    <ion-row>
+      <ion-col size="6">
+        <ion-button (click)="launchCamera()" expand="block" fill="clear" color="primary" shape="round">
+          <span>
+            <ion-icon size="large" name="camera-outline"></ion-icon>
+          </span>
+        </ion-button>
+      </ion-col>
+      <ion-col size="6">
+        <ion-button
+          *ngIf="isFile"
+          (click)="validateIdentitePhoto()"
+          expand="block" fill="clear" color="secondary" shape="round">
+          <span>
+            <ion-icon size="large" name="checkmark-outline"></ion-icon>
+          </span>
+        </ion-button>
+        <ion-button
+          *ngIf="isLoadFile && !isFile"
+          (click)="onNext()"
+          color="primary" expand="block" fill="solid" color="secondary" shape="round">
+          Continuer
+          <ion-icon style="color: var(--ion-color-white);" slot="end" name="chevron-forward-outline"></ion-icon>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-card-content>
+</div>

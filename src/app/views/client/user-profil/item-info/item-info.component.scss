@@ -1,0 +1,14 @@
+.item-info {
+    display: flex;
+    padding: 16px;
+    border-radius: 5px;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    border: 1px solid var(--ion-color-secondary);
+}
+
+.nbr-info {
+    font-weight: bold;
+    font-size: 18px;
+}

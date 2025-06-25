@@ -1,0 +1,62 @@
+<ion-content fullscreen="true" class="modal-init-subscribe">
+  <div id="box_ctnt">
+    <div class="info-box" *ngIf="!isLaunched;else updatePageView">
+      <lottie-player
+        autoplay
+        loop
+        style='width:180px !important'
+        src="https://assets9.lottiefiles.com/temp/lf20_UsfnhV.json"
+        speed='1'>
+      </lottie-player>
+      <p>Certifier votre identité lors des demandes prestations et d'avenant</p>
+      <h2>Documents Justificatifs</h2>
+      <ion-button (click)="toUploadFileModal()" color="secondary" expand="block" shape="round">
+        <ion-icon style="color: var(--ion-color-primary);" slot="end" name="chevron-forward-outline"></ion-icon>
+        <span style="color: var(--ion-color-primary);">Continuer</span>
+      </ion-button>
+    </div>
+  </div>
+  <ng-template #updatePageView>
+    <div class="card-control" (click)="prevStep()" *ngIf="stepFile >= 1">
+      <ion-icon slot="start" name="arrow-back-outline"></ion-icon>
+      <span>précédent</span>
+    </div>
+    <div [ngSwitch]="stepFile">
+      <!-- <div *ngSwitchCase="'0'">
+        <app-take-photo-card
+          [photoIdentitePath]="photoIdentitePath"
+          (eventTakeFile)="launchCamera()"
+          (eventNext)="addFile($event)"
+        ></app-take-photo-card>
+      </div> -->
+      <!-- <div *ngSwitchCase="'0'">
+        <app-upload-file-card
+          [photoIdentitePath]="photoIdentitePath"
+          (eventTakeFile)="selectImage()"
+          (eventNext)="addFile($event)"
+        ></app-upload-file-card>
+      </div> -->
+      <div *ngSwitchCase="'0'">
+        <app-signature-card
+          (eventNext)="addFile($event)"
+          (eventPrevious)="previousModalEvent()"
+        ></app-signature-card>
+      </div>
+    </div>
+  </ng-template>
+</ion-content>
+<div id="footer-box">
+  <ion-row class="ion-justify-content-center" style="background-color: var(--ion-color-primary); width: 100%;">
+    <ion-col size="8" style="background-color: var(--ion-color-secondary);">
+      <button
+        mat-button
+        color="accent"
+        (click)="dismiss()"
+        style="width: 100%;"
+        class="custom-btn-style">
+        <mat-icon style="margin: 0 15px; color: var(--ion-color-primary);">expand_more</mat-icon>
+        <span style="margin: 0 15px; color: var(--ion-color-primary); text-align: center;">Annuler </span>
+      </button>
+    </ion-col>
+  </ion-row>
+</div>

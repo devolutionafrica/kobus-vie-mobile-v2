@@ -1,0 +1,52 @@
+::ng-deep .modal-info-modal-style .ion-page {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  jjustify-content: flex-start;
+  background-color: transparent;
+}
+
+::ng-deep .modal-info-modal-style .modal-wrapper {
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: absolute;
+  background-color: transparent;
+}
+
+::ng-deep #modal-container-modal-info {
+  width: 85%;
+  height: 40%;
+  margin: 30% 0;
+  padding: 20px;
+  border-radius: 15px;
+  background-color: var(--ion-color-white);
+}
+
+#info_modal_box {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+
+  p {
+    font-size: 22px;
+    text-align: center;
+    color: rgb(47, 47, 47);
+  }
+
+  ion-icon {
+    width: 70px;
+    height: 70px;
+    margin: 10px 0;
+  }
+}
+
+.box-Ctnt {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}

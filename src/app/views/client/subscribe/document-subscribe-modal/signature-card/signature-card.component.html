@@ -1,0 +1,72 @@
+<div class="card">
+  <ion-card-header>
+    <ion-card-subtitle>Identité physique</ion-card-subtitle>
+    <ion-card-title>Signature client</ion-card-title>
+  </ion-card-header>
+  <ion-card-content>
+    <div id="signature-pad" *ngIf="!isWrite">
+      <div class="header-box" style="background-color: var(--ion-color-dark)">
+        <ion-row>
+          <ion-col size="2">
+            <ion-icon (click)="goBack()" style="color: var(--ion-color-white)" size="large" name="chevron-back-outline"></ion-icon>
+          </ion-col>
+          <ion-col size="8">
+            <ion-text style="color: var(--ion-color-white)" class="ion-text-center">
+              <h2 >Signature</h2>
+            </ion-text>
+          </ion-col>
+          <ion-col size="2">
+            <ion-icon (click)="savePad()" size="large" name="checkmark-outline" style="color: var(--ion-color-white)"></ion-icon>
+          </ion-col>
+        </ion-row>
+      </div>
+      <div id="pay-box" [ngClass]="{'drawing-active': isDrawing}">
+        <signature-pad
+          [options]="signaturePadOptions"
+          (onBeginEvent)="drawStart()"
+          (onEndEvent)="drawComplete()">
+        </signature-pad>
+      </div>
+      <div id="footer-signature-pad">
+        <ion-row>
+          <ion-col size="6">
+            <ion-button  (click)="clearPad()" expand="block" fill="clear" color="primary" shape="round">
+              <span>
+                <ion-icon size="large" name="sync-outline" style="color: var(--ion-color-white)"></ion-icon>
+              </span>
+            </ion-button>
+          </ion-col>
+          <ion-col size="6">
+            <ion-button (click)="savePad()" expand="block" fill="clear" color="primary" shape="round">
+              <span>
+                <ion-icon size="large" name="checkmark-outline" style="color: var(--ion-color-white)"></ion-icon>
+              </span>
+            </ion-button>
+          </ion-col>
+        </ion-row>
+      </div>
+    </div>
+    <div id="user_photo" *ngIf="isWrite">
+      <img [src]="signature" alt="" srcset="">
+    </div>
+    <ion-row *ngIf="isWrite">
+      <ion-col size="6">
+        <ion-button
+          (click)="editSignature()"
+          expand="block" fill="clear" color="primary" shape="round">
+          <span>
+            <ion-icon size="large" name="pencil-outline"></ion-icon>
+          </span>
+        </ion-button>
+      </ion-col>
+      <ion-col size="6">
+        <ion-button
+          (click)="onNext()"
+          color="primary" expand="block" fill="solid" color="secondary" shape="round">
+          Continuer
+          <ion-icon style="color: var(--ion-color-white);" slot="end" name="chevron-forward-outline"></ion-icon>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-card-content>
+</div>

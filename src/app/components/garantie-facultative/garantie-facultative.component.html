@@ -1,0 +1,41 @@
+<div class="garantie-item">
+  <ion-row class="ion-align-items-center ion-justify-content-center">
+    <ion-col size="2">
+      <span (click)="toggleCheck()">
+        <ion-icon (click)="removeGarantieFacultative()" *ngIf="isChecked" color="success" name="checkmark-done-outline" slot="end"></ion-icon>
+        <ion-icon *ngIf="!isChecked" name="checkbox-outline" slot="end" color="dark" ></ion-icon>
+      </span>
+    </ion-col>
+    <ion-col size="8" class="ion-no-padding">
+      <ion-row class="ion-align-items-center ion-no-padding">
+        <ion-col size="10" class="ion-no-padding">
+          <span style="color: var(--ion-color-dark-shade); font-weight: 410; font-size: initial;" class="ion-no-padding">
+            {{garantieInfo.libelle}}
+          </span>
+        </ion-col>
+      </ion-row>
+      <span style="color: var(--ion-color-dark-shade)">Plafond {{garantieInfo.plafondCapital|number}} {{devise}}</span>
+    </ion-col>
+    <ion-col size="2">
+      <span>
+        <ion-icon *ngIf="garantieInfo.version !== 1" color="success" slot="start" name="lock-open-outline"></ion-icon>
+        <ion-icon *ngIf="garantieInfo.version === 1" color="danger" slot="start" name="lock-closed-outline"></ion-icon>
+      </span>
+    </ion-col>
+  </ion-row>
+  <div *ngIf="garantieInfo?.listCapital">
+    <ion-list class="ion-no-padding">
+      <ion-item class="ion-no-margin" >
+        <ion-icon color="dark" slot="start" name="calendar-outline"></ion-icon>
+        <ion-select
+          (ionChange)="changeGarantie($event)"
+          placeholder="Exemple : {{garantieInfo.listCapital[0]?.Amount|number}}"
+          multiple="false" [value]="garantieInfo?.listCapital[0]?.Amount|number" okText="Valider"
+          cancelText="Annuler">
+          <ion-select-option *ngFor="let capital of garantieInfo.listCapital" [value]="capital.Amount">{{capital.Amount|number}} {{devise}}
+          </ion-select-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+  </div>
+</div>

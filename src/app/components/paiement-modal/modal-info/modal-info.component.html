@@ -1,0 +1,28 @@
+<div id="modal-container-modal-info" >
+  <ion-row class="ion-align-items-center">
+    <ion-col size="10">
+      <ion-text color="primary">
+        <h2 style="margin: 0;">Service de Paiement</h2>
+      </ion-text>
+    </ion-col>
+    <ion-col size="2" (click)="onCloseModal()">
+      <ion-icon color="primary" size="large" name="close-outline"></ion-icon>
+    </ion-col>
+  </ion-row>
+  <div id="info_modal_box" class="ion-padding">
+    <ng-container *ngIf="statusOperate; else errorBox">
+      <ion-row class="ion-align-items-center">
+        <div class="box-Ctnt">
+          <ion-icon color="success" name="checkmark-outline"></ion-icon>
+          <p>Paiement effectué avec succès</p>
+        </div>
+      </ion-row>
+    </ng-container>
+    <ng-template #errorBox>
+      <div class="box-Ctnt">
+        <ion-icon color="warning" name="information-circle-outline"></ion-icon>
+        <p>Échec de paiement</p>
+      </div>
+    </ng-template>
+  </div>
+</div>

@@ -1,0 +1,159 @@
+{
+    "CONFIG_LANG": {
+        "layoutText": {
+            "title": "Seleção de idioma"
+        },
+        "radioText": {
+            "language": {
+                "fr": "francês",
+                "en": "inglês",
+                "pt": "Português"
+            }
+        },
+        "btnText": {
+            "title": "Seguir"
+        }
+    },
+    "CONFIG_COUNTRY": {
+        "layoutText": {
+            "title": "Escolha seu país"
+        },
+        "selectInput": {
+            "title": "Escolha do país"
+        },
+        "btnText": {
+            "nextAction": {
+                 "title": "Seguir"
+            },
+            "previousAction": {
+             "title": "Anterior"
+            }
+        }
+    },
+    "LOGIN_SCREEN": {
+        "layoutText": {
+            "title": "Iniciar sessão"
+        },
+        "formText": {
+            "inputText": {
+                "username": {
+                    "text": "",
+                    "placeholder": "Nome do usuário",
+                    "errorMsg": {}
+                },
+                "password": {
+                    "text": "",
+                    "placeholder": "Senha",
+                    "errorMsg": {}
+                }
+            },
+            "btnText": {
+                "btnSingin": "Conectar",
+                "btnSubscribe": "Nossos produtos"
+            }
+        },
+        "footerText": {
+            "text": "Senha esquecida ?",
+            "simpleAction": "Clique aqui",
+            "btnText": {
+                "previousAction": {
+                    "title": "Anterior"
+                }
+             }
+        }
+    },
+    "DASHBOARD": {
+      "headerText": "Casa",
+      "chartText": {
+          "totalEncaiss": "Retirada total",
+          "totalEpargn": "Total de faturas não pagas",
+          "totalPrim": "Total de prêmios"
+      },
+      "contratText": {
+          "header": "Meus contratos ativos"
+      }
+    },
+    "RECUP_PASSWORD_SCREEN": {
+      "layoutText": {
+        "title": "Esqueceu sua senha"
+      },
+      "formText": {
+          "inputText": {
+              "nuPolice": {
+                  "text": "",
+                  "placeholder": "Número da polícia",
+                  "errorMsg": {}
+              },
+              "addressMail": {
+                  "text": "",
+                  "placeholder": "Endereço de correio",
+                  "errorMsg": {}
+              }
+          },
+          "btnText": {
+              "btnReset": "Redefinir"
+          }
+      },
+      "footerText": {
+          "text": "Entrar",
+          "simpleAction": " agora",
+          "btnText": {
+              "previousAction": {
+                  "title": "Anterior"
+              }
+          }
+      }
+    },
+    "PRODUCTS_SCREEN": {
+      "headerTitle": "Productos"
+    },
+    "DETAIL_CONTRAT_SCREEN": {
+      "headerTitle": "Detalhe do contrato",
+      "bannerBox": {
+        "nuPolice": "Polícia No",
+        "dateEffet": "Data efetiva"
+      },
+      "tableSlider": {
+        "slideDetail": {
+          "title": "Detalhe",
+          "content": {
+            "nuPolice": "Polícia No",
+            "typePolice": "Tipo de fonte",
+            "labelCntrt": "Palavra de contrato",
+            "dateStart": "Data de início",
+            "dateEnd": "Data final",
+            "numberImpaye": "Número de contas não pagas",
+            "dureePolice": "Termo da política",
+            "amountCapital": "Valor de contribuição",
+            "amountRachat": "Valor de rendição",
+            "periodicity": "Periodicidade"
+          }
+        },
+        "slidePrestation": {
+          "title": "Serviço",
+          "content": {
+            "btnText": "Novo serviço ",
+            "leftText": "Serviço",
+            "rightText": "Resultar",
+            "itemPrestation": {
+              "date": "Solicitados em "
+            }
+          }
+        },
+        "slideImpaye": {
+          "title": "Não pago",
+          "content": {
+            "btnPanier": "Cesta",
+            "itemPeesrions": {
+              "amount": "Resultar",
+              "prestDate": "Datado",
+              "prestEnd": "no"
+            }
+          }
+        },
+        "slideReglmt": {
+          "title": "Regulamento"
+        }
+      }
+    }
+}

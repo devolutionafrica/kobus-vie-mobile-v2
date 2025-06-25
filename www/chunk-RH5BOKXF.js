@@ -1,0 +1,1 @@
+var p=function(_){return _.BJ_VIE="ic_benin_96px.png",_.CG_VIE="ic_congo_96px.png",_.ML_VIE="ic_mali_96px.png",_.GN_VIE="ic_guinea_124px.png",_.CM_VIE="ic_cameroon_96px.png",_.GB_VIE="ic_gabon_96px.png",_.SN_VIE="ic_senegal_124px.png",_.TG_VIE="ic_togo_96px.png",_.CI_VIE="ic_ivory_coast_96px.png",_.GW_VIE="ic_guinea_bissau_96px.png",_}(p||{});export{p as a};

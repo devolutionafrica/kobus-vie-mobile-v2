@@ -1,0 +1,9 @@
+<ion-searchbar
+  [placeholder]="placeholder"
+  inputmode="search"
+  type="search"
+  [value]="searchInput"
+  (ionInput)="searchOnList($event)"
+  [debounce]="250"
+  showCancelButton="always">
+</ion-searchbar>

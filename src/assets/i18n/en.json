@@ -1,0 +1,159 @@
+{
+    "CONFIG_LANG": {
+        "layoutText": {
+            "title": "Select the language"
+        },
+        "radioText": {
+            "language": {
+                "fr": "French",
+                "en": "English",
+                "pt": "Portuguese"
+            }
+        },
+        "btnText": {
+            "title": "Continue"
+        }
+    },
+    "CONFIG_COUNTRY": {
+        "layoutText": {
+            "title": "Choose your country"
+        },
+        "selectInput": {
+            "title": "Country choice"
+        },
+        "btnText": {
+            "nextAction": {
+                 "title": "Continue"
+            },
+            "previousAction": {
+             "title": "Previous"
+            }
+        }
+    },
+    "LOGIN_SCREEN": {
+        "layoutText": {
+            "title": "Log in"
+        },
+        "formText": {
+            "inputText": {
+                "username": {
+                    "text": "",
+                    "placeholder": "username",
+                    "errorMsg": {}
+                },
+                "password": {
+                    "text": "",
+                    "placeholder": "Password",
+                    "errorMsg": {}
+                }
+            },
+            "btnText": {
+                "btnSingin": "To log in",
+                "btnSubscribe": "Our products"
+            }
+        },
+        "footerText": {
+            "text": "Forgot your password?",
+            "simpleAction": " Click here",
+            "btnText": {
+                "previousAction": {
+                    "title": "Previous"
+                }
+             }
+        }
+    },
+    "DASHBOARD": {
+      "headerText": "Home",
+      "chartText": {
+          "totalEncaiss": "Total cash out",
+          "totalEpargn": "Total unpaid bills",
+          "totalPrim": "Total premiums"
+      },
+      "contratText": {
+          "header": "My active contracts"
+      }
+    },
+    "RECUP_PASSWORD_SCREEN": {
+      "layoutText": {
+        "title": "Forgot your password"
+      },
+      "formText": {
+          "inputText": {
+              "nuPolice": {
+                  "text": "",
+                  "placeholder": "Police number",
+                  "errorMsg": {}
+              },
+              "addressMail": {
+                  "text": "",
+                  "placeholder": "Mail address",
+                  "errorMsg": {}
+              }
+          },
+          "btnText": {
+              "btnReset": "Reset"
+          }
+      },
+      "footerText": {
+          "text": "To enter",
+          "simpleAction": " now",
+          "btnText": {
+              "previousAction": {
+                  "title": "Previous"
+              }
+          }
+      }
+    },
+    "PRODUCTS_SCREEN": {
+      "headerTitle": "Products"
+    },
+    "DETAIL_CONTRAT_SCREEN": {
+      "headerTitle": "Contract detail",
+      "bannerBox": {
+        "nuPolice": "Police number",
+        "dateEffet": "Effective Date"
+      },
+      "tableSlider": {
+        "slideDetail": {
+          "title": "Detail",
+          "content": {
+            "nuPolice": "Police number",
+            "typePolice": "Font type",
+            "labelCntrt": "Contract word",
+            "dateStart": "Start date",
+            "dateEnd": "End date",
+            "numberImpaye": "Number of unpaid bills",
+            "dureePolice": "Policy term",
+            "amountCapital": "Contribution amount",
+            "amountRachat": "Surrender value",
+            "periodicity": "Periodicity"
+          }
+        },
+        "slidePrestation": {
+          "title": "Benefits",
+          "content": {
+            "btnText": "New service",
+            "leftText": "Service",
+            "rightText": "Amount",
+            "itemPrestation": {
+              "date": "Ask the "
+            }
+          }
+        },
+        "slideImpaye": {
+          "title": "Unpaid",
+          "content": {
+            "btnPanier": "Basket",
+            "itemPeesrions": {
+              "amount": "Amount",
+              "prestDate": "Dated",
+              "prestEnd": "at"
+            }
+          }
+        },
+        "slideReglmt": {
+          "title": "Rules"
+        }
+      }
+    }
+  }

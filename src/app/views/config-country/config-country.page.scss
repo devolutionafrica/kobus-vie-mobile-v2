@@ -1,0 +1,90 @@
+@keyframes flip-2-hor-top-2 {
+  0% {
+    transform: translateY(-100%) rotateX(180deg);
+    transform-origin: 50% 100%;
+  }
+  100% {
+    transform: translateY(0) rotateX(0);
+    transform-origin: 50% 0%;
+  }
+}
+
+#country {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  padding: 0 7%;
+
+  h1 {
+    margin: 15px 0;
+    font-size: 1.3rem;
+    font-weight: 400;
+  }
+
+  .lang-icon {
+    width: 85px;
+    height: 85px;
+    margin-bottom: 20px;
+    animation: flip-2-hor-top-2 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955)
+      both;
+  }
+}
+
+#next-option {
+  position: absolute;
+  text-decoration: none;
+  right: 30px;
+  bottom: 15px;
+}
+
+#prev-option {
+  position: absolute;
+  text-decoration: none;
+  left: 30px;
+  bottom: 15px;
+}
+
+form {
+  width: 90%;
+  padding: 0;
+  ion-item {
+    width: 100%;
+    font-size: 1rem;
+    font-weight: 200;
+    color: var(--ion-color-dark);
+    border-bottom: 1px solid var(--ion-color-dark);
+
+    --border-style: none;
+    --higthligth-heigth: 0px;
+
+    select {
+      border: 0 var(--ion-color-white);;
+      padding: 16px 0;
+      font-size: 1rem;
+      font-weight: 200;
+      color: var(--ion-color-dark);
+      background-color: transparent;
+    }
+
+    ion-img {
+      width: 35px;
+      height: 100%;
+      margin-left: 20px;
+    }
+  }
+
+  .custom-select {
+    width: 78%;
+  }
+}
+
+::ng-deep .mat-select-value {
+  color: var(--ion-color-dark) !important;
+}
+
+.ios-header {
+  padding-top: 1.40rem !important;
+}

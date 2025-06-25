@@ -1,0 +1,17 @@
+<ion-row class="item-ctrat" (click)="moveToDetailContrat()">
+  <ion-col size="1">
+    <ion-icon size="large" color="medium" name="document-text-outline"></ion-icon>
+  </ion-col>
+  <ion-col size="9">
+    <div class="item-box">
+      <h3 style="color: var(--ion-color-primary-shade);">{{data.detailContrat.libellePolice}}</h3>
+      <p>N°Police : {{data.detailContrat.numeroPolice}}</p>
+      <!-- <p>Prime périodique : {{data.detailContrat.primePeriodique | number}} {{devise}}</p> -->
+      <p>Prime périodique : {{data.detailContrat.montantPrimePeriodique}} {{devise}}</p>
+    </div>
+  </ion-col>
+  <ion-col size="2">
+    <ion-icon *ngIf="data.detailContrat.statut === 'Actif'" size="large" color="secondary" name="chevron-forward-outline"></ion-icon>
+    <ion-icon *ngIf="data.detailContrat.statut !== 'Actif'" size="large" color="danger" name="warning-outline"></ion-icon>
+  </ion-col>
+</ion-row>

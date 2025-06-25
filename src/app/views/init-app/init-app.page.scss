@@ -1,0 +1,56 @@
+swiper-container {
+  height: 70%;
+}
+
+.mat-spinner circle {
+  color: var(--ion-color-primary) !important;
+}
+
+.slider-box {
+  margin-top: 4rem;
+}
+
+.slider-box, .footer-box {
+  h3 {
+    margin: 1em 0;
+    font-size: 1.3rem;
+    font-weight: 200;
+  }
+  p {
+    padding: 0 30px;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: var(--ion-color-step-600, #60646b);
+  }
+}
+
+h4 {
+  font-size: 1.1rem;
+  font-weight: 200;
+}
+
+.lottie-box {
+  max-height: 50%;
+  max-width: 80%;
+  margin: 0 40px;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+a {
+  text-decoration: none;
+}
+
+.footer-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.ios-header {
+  padding-top: 1.40rem !important;
+}

@@ -1,0 +1,33 @@
+{
+    "data": [
+        {
+            "idProd": "string",
+            "dateEffet": "date",
+            "capitalScrip": "number",
+            "dureeCntrt": "number (Année)",
+            "dateCltre": "date",
+            "souscrip": {
+                "nom": "string",
+                "prenom": "string",
+                "dateNaiss": "date",
+                "lieuNaiss": "string",
+                "contacts": [
+                    { "valeur": "string"}
+                ]
+            },
+            "benef": [
+                {
+                    "typeBnf":"string",
+                    "tauxRption": "string (%)",
+                    "autres": {
+                        "nom": "string",
+                        "prenom": "string",
+                        "dateNaiss": "date",
+                        "lieuNaiss": "string",
+                        "contact": "string"
+                    }
+                }
+            ]
+        }
+    ]
+}

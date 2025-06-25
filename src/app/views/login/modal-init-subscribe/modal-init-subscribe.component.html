@@ -1,0 +1,47 @@
+<div class="modal-init-subscribe ion-padding">
+  <ion-toolbar>
+    <ion-icon (click)="dismiss()" name="close-outline" size="large" slot="end"></ion-icon>
+  </ion-toolbar>
+  <ion-content class="ion-padding">
+    <form action="" class="user-form" [formGroup]="initFormSubscribe">
+      <p>Nom</p>
+      <ion-item>
+        <ion-icon color="dark" slot="start" name="person-outline"></ion-icon>
+        <ion-input formControlName="nom" color="dark" type="text" ></ion-input>
+      </ion-item>
+      <p>Prénom</p>
+      <ion-item>
+        <ion-icon color="dark" slot="start" name="person-outline"></ion-icon>
+        <ion-input formControlName="prenom" color="dark" type="text" ></ion-input>
+      </ion-item>
+      <p>Contact</p>
+      <ion-item>
+        <ion-icon color="dark" slot="start" name="call-outline"></ion-icon>
+        <ion-input formControlName="contact" color="dark" type="string" ></ion-input>
+      </ion-item>
+      <p>Adresse E-mail</p>
+      <ion-item>
+        <ion-icon color="dark" slot="start" name="mail-outline"></ion-icon>
+        <ion-input formControlName="adressEmail" color="dark" type="email" ></ion-input>
+      </ion-item>
+      <button
+        [disabled]='this.initFormSubscribe.invalid'
+        (click)="onMoveProduct()"
+        style="background-color: var(--ion-color-secondary) !important;"
+        mat-flat-button color="primary">
+        <span class="ion-padding" style="color: var(--ion-color-white)">Continuer</span>
+        <mat-icon style="color: var(--ion-color-white)">navigate_next</mat-icon>
+      </button>
+      <!-- <div class="ligne-tag">
+        <span>Ou</span>
+        <hr size="15" width="100%" color="var(--ion-color-primary)">
+      </div>
+      <button
+        (click)="signIn()"
+        mat-flat-button color="accent" >
+        <ion-icon size="large" slot="start" name="logo-google"></ion-icon>
+        <span class="ion-padding">Continuer avec Google</span>
+      </button> -->
+    </form>
+  </ion-content>
+</div>

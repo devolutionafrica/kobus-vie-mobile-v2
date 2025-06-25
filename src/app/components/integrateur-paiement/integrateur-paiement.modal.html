@@ -1,0 +1,30 @@
+<div id="pay_integrator_modal-style">
+  <ion-row class="ion-align-items-center ion-padding">
+    <ion-col size="2">
+      <ion-icon color="dark" size="large" name="card-outline"></ion-icon>
+    </ion-col>
+    <ion-col size="9">
+    </ion-col>
+    <ion-col size="1" (click)="onCloseModal()">
+      <ion-icon color="dark" size="large" name="close-outline"></ion-icon>
+    </ion-col>
+  </ion-row>
+  <ion-content class="ion-padding-horizontal">
+    <h1 class="ion-padding-horizontal">Moyen de paiement</h1>
+    <div class="ion-padding-horizontal ion-padding-top">
+      <p>
+        Avec votre nouvelle solution, vous avez maintenant
+        le choix entre plusieurs modes de paiement.
+        <i>Alors à vous de jouer.</i>
+      </p>
+    </div>
+    <div class="ion-padding-top">
+      <item-integrator-pay
+        *ngFor="let item of listIntegrateur"
+        [data]='item'
+        [amount]="payData.amount"
+        (openPaymentModal)="openPaymentModal($event,item)">
+      </item-integrator-pay>
+    </div>
+  </ion-content>
+</div>

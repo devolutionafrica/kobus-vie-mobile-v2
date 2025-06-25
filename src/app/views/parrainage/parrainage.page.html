@@ -1,0 +1,29 @@
+<ion-app>
+  <ion-content fullscreen class="ion-padding" scroll-y="false">
+    <div id="parrainage">
+      <ion-text color="primary" style="width: 100%;" class="ion-padding-horizontal">
+        <h5 class="ion-text-right" (click)="onFinalyConfig()">Ignorer & terminer > </h5>
+      </ion-text>
+      <ion-card>
+        <img src="assets/images/parrain_image.jpg" />
+        <ion-card-header class="ion-no-padding-horizontal">
+          <ion-card-subtitle>Espace réservé au conseiller</ion-card-subtitle>
+          <ion-card-title>Réference du parrain</ion-card-title>
+        </ion-card-header>
+        <ion-card-content [formGroup]="parrainForm">
+          <ion-item>
+            <ion-icon color="dark" slot="start" name="apps-outline"></ion-icon>
+            <ion-input formControlName="codeApporteur" class="ion-no-padding" required='true' color="dark" type="text" placeholder=""></ion-input>
+          </ion-item>
+          <button
+            [disabled]="parrainForm.invalid"
+            (click)="onAddParrain()"
+            class="btn-style" style="background-color: var(--ion-color-secondary) !important;"
+            mat-flat-button color="dark">
+            <span class="ion-padding" style="color: var(--ion-color-white)">Je valide </span>
+          </button>
+        </ion-card-content>
+      </ion-card>
+    </div>
+  </ion-content>
+</ion-app>

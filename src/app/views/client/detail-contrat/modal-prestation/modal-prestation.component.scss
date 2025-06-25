@@ -1,0 +1,230 @@
+::ng-deep #modal-prest-cmp {
+  width: 100%;
+  height: 100%;
+  background-color: var(--ion-color-white);
+
+  h2 {
+    margin: 0;
+  }
+}
+
+#header-box {
+  width: 100%;
+  padding: 5px;
+  h2 {
+    margin: 0;
+    font-size: 1.2rem !important;
+    font-weight: 400 !important;
+  }
+}
+
+#footer-box {
+  width: 100%;
+
+  button {
+    width: 100%;
+  }
+}
+
+ion-item {
+  --border-style: none;
+  border-bottom: 1px solid var(--ion-color-dark);
+  margin-bottom: 22px;
+}
+
+ion-list {
+  padding: 0;
+}
+
+i {
+  text-decoration: none;
+  font-style: normal;
+  color: var(--ion-color-dark);
+  font-size: .8rem;
+  font-weight: 200;
+  display: block;
+}
+
+ion-text {
+  span {
+    font-size: 1rem !important;
+    font-weight: 200 !important;
+  }
+  p {
+    font-size: 1rem !important;
+    font-weight: 200 !important;
+  }
+}
+
+::ng-deep .modal-prest-cmp .modal-wrapper {
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: absolute;
+  background-color: transparent;
+}
+
+::ng-deep .modal-prest-cmp .ion-page {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
+  background-color: transparent;
+}
+
+.prest-item {
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  border-radius: 5px;
+  justify-content: space-between;
+  box-shadow: 1px 6px 6px 6px rgba(10, 10, 10, 0.04);
+  margin: 8px 7px;
+
+  .price-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    span:nth-child(1) {
+      font-size: large;
+      font-weight: 500;
+      padding: 5px 0;
+    }
+
+    span:nth-child(2) {
+      font-size: small;
+      font-weight: 500;
+    }
+  }
+
+  .title-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    span:nth-child(1) {
+      font-size: large;
+      font-weight: 500;
+      padding: 5px 0;
+    }
+  }
+}
+
+.prst-detail {
+  margin: 8px;
+  padding: 10px;
+  font-size: 14px;
+  border-radius: 6px;
+
+  h3 {
+    font-size: 15px;
+    margin-bottom: 2px;
+  }
+}
+
+.item-view {
+  padding: 6px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+
+.box-title {
+  span:nth-child(1) {
+    font-size: 1.2rem !important;
+    font-weight: 300 !important;
+    margin-bottom: 5px;
+  }
+
+  span:nth-child(2) {
+    font-size: 1rem !important;
+    font-weight: 200 !important;
+  }
+}
+
+::ng-deep .mat-tab-labels {
+  margin-top: 0 !important;
+}
+
+::ng-deep .mat-typography .ctnt {
+  margin: 10px 0;
+  padding: 0 10px;
+  border-radius: 5px;
+}
+
+ion-button:nth-child(2) {
+  margin-top: 10px;
+  width: auto;
+}
+
+ion-input {
+  font-size: 1rem !important;
+  font-weight: 200 !important;
+}
+
+select {
+  border: 0 var(--ion-color-white);
+  font-size: auto;
+  font-size: 1rem !important;
+  font-weight: 200 !important;
+  background-color: var(--ion-color-white);
+}
+
+.info-prestation {
+  margin: 0;
+  font-size: medium;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+.box-detail-simulate {
+  padding: 16px;
+  background-color: var(--ion-color-primary);
+}
+
+.toast-container {
+  background-color: rgba(10, 10, 10, 0.04);
+  color: var(--ion-color-white);
+}
+
+mat-form-field {
+  width: 100%;
+  color: rgba(0, 0, 0, 0.89);
+  border-color: var(--ion-color-primary);
+  padding-bottom: 0;
+}
+
+.mat-flat-button {
+  width: 100% !important;
+  min-width: unset !important;
+}
+
+.custom-btn-style {
+  color: var(--ion-color-white) !important;
+}
+
+::ng-deep .swal2-input-label {
+  padding: 1em 1.6em .3em;
+  text-align: center;
+}
+
+span, p {
+  font-size: 1rem !important;
+  font-weight: 400 !important;
+}
+
+.ios-header {
+  padding-top: 1.40rem !important;
+}
+
+.ngx-slider .ngx-slider-pointer {
+  cursor: pointer;
+  background-color: var(--ion-color-primary) !important;
+
+}

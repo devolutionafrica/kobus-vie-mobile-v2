@@ -1,0 +1,38 @@
+
+.item-integrator-ctnt {
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  background-color: var(--ion-color-white);
+
+  box-shadow: inset 0 0px 1px 1px rgba(254, 254, 254, 0.9), 0 20px 27px 0 rgba(0, 0, 0, 0.05) !important;
+
+  p {
+    margin: 0 !important;
+  }
+
+  i {
+    color: var(--ion-color-dark);
+    font-size: small;
+  }
+}
+
+.integrator-title {
+  font-size: large;
+  font-weight: 500;
+  color: var(--ion-color-primary);
+}
+
+.integrator-operator {
+  font-size: small;
+  color: var(--ion-color-secondary);
+}
+
+ion-img {
+  height: 4rem;
+  width: 4rem;
+
+  img {
+    border-radius: 5rem !important;
+  }
+}
+

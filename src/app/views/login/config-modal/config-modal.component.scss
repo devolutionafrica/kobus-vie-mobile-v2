@@ -1,0 +1,42 @@
+::ng-deep .chang-filiale-modal-style .modal-wrapper {
+  left: 0;
+  bottom: 0;
+  height: 50%;
+  width: 100%;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  display: block;
+  position: absolute;
+}
+
+.modal-config{
+
+    width: 100%;
+    --padding:  5%;
+    height: 88%;
+
+    h2 {
+      margin: 0;
+      font-size: 1.3rem;
+      font-weight: 300;
+    }
+
+    ion-img {
+        width: 35px;
+        height: 100%;
+        margin-right: 20px;
+    }
+
+    ion-item {
+        border-bottom: 0;
+    }
+
+    ion-label {
+      font-size: 1rem;
+      font-weight: 200;
+    }
+
+    ion-button {
+        margin-top: 8%;
+    }
+}

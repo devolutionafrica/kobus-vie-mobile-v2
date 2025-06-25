@@ -1,0 +1,179 @@
+ion-content {
+  --background: var(--ion-background-white);
+}
+
+ion-refresher-content {
+  background-color: var(--ion-background-white);
+}
+
+.user-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+
+  img {
+    height: 60px;
+    width: 60px;
+    border-radius: 60px;
+  }
+}
+
+.user-info {
+  padding: 0 15px;
+  h3 {
+    margin: 0;
+    color: white;
+    font-size: 1.3rem;
+    font-weight: 200;
+  }
+  p {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 200;
+    color: rgba(255, 255, 255, 0.65);
+  }
+}
+
+#header-box {
+  padding: 15px;
+  background-color: var(--ion-color-primary);
+  padding-bottom: 70px;
+
+  h2 {
+    margin: 0;
+    font-size: 1.4rem;
+    font-weight: 200;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+}
+
+::ng-deep .produit-modal-style .modal-wrapper {
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: absolute;
+  background-color: transparent;
+}
+
+::ng-deep .produit-modal-style .ion-page {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+::ng-deep #modal-container {
+  width: 90%;
+  height: 90%;
+}
+
+#static-box {
+  margin: 0 15px 15px;
+  padding-top: .2rem;
+  border-radius: 8px;
+  background-color: var(--ion-color-white);
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  .marker {
+    padding: 5px;
+    border-radius: 5px;
+    background-color: var(--ion-color-primary);
+  }
+}
+
+.contrat-box {
+  margin: 15px;
+  padding: 10px 20px;
+  border-radius: 8px;
+  background-color: var(--ion-color-white);
+}
+
+#graph-box{
+  margin: 0 15px;
+  margin-bottom: 15px;
+}
+
+app-dashboard-card {
+  width: 48%;
+}
+
+app-dashboard-card:nth-child(1), app-dashboard-card:nth-child(3) {
+  margin-right: 2%;
+}
+
+app-dashboard-card:nth-child(2), app-dashboard-card:nth-child(4) {
+  margin-left: 2%;
+}
+
+
+#static-value {
+  h3, span {
+    margin: 0;
+  }
+
+  h3 {
+    color: rgb(27, 27, 27);
+    font-size: 1.2rem;
+    font-weight: 300;
+  }
+
+  span {
+    color: #6a7d8d;
+    font-size: 1rem;
+    font-weight: 200;
+  }
+}
+
+#contrat-box {
+  padding: 0;
+  ion-text h3 {
+    font-size: 1rem;
+    font-weight: 400;
+    margin: 0;
+  }
+}
+
+.header-box-product {
+  padding: 5px 0;
+  border-bottom: 0.5px solid #133459a2;
+  h3 {
+    margin: 0;
+    font-size: 1.3rem;
+    font-weight: 300;
+  }
+}
+
+.info-btn {
+  color: #6a7d8d;
+  text-decoration: none;
+}
+
+#user-info {
+  padding: 10px 10px;
+  margin-bottom: 0;
+
+  span {
+    color: rgb(214, 214, 214);
+    font-size: 1rem;
+    font-weight: 200;
+  }
+}
+
+#static-graph{
+  width: 250px;
+  height: 250px;
+}
+
+.ios-header {
+  padding-top: env(safe-area-inset-top)!important;
+  // padding-top: 1.40rem !important;
+}

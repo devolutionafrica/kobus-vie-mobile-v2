@@ -1,0 +1,83 @@
+<div class="tab-detail-box">
+  <mat-card class="detail-card">
+    <mat-card-header>
+      <mat-card-title>Information Générale </mat-card-title>
+      <mat-card-subtitle>{{contrat.detailContrat.libellePolice}}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="item-view box-title">
+        <span>{{contrat.detailContrat.numeroPolice}}</span>
+        <span>{{'DETAIL_CONTRAT_SCREEN.tableSlider.slideDetail.content.nuPolice'|translate}}</span>
+      </div>
+      <div class="item-view box-title">
+        <span>{{contrat.detailContrat.naturePolice}}</span>
+        <span>{{'DETAIL_CONTRAT_SCREEN.tableSlider.slideDetail.content.typePolice'|translate}}</span>
+      </div>
+      <div class="item-view box-title">
+        <span>{{contrat.detailContrat.dateEffet|date:'dd/MM/yyyy'}}</span>
+        <span>{{'DETAIL_CONTRAT_SCREEN.tableSlider.slideDetail.content.dateStart'|translate}}</span>
+      </div>
+      <div class="item-view box-title">
+        <span>{{contrat.detailContrat.dateEcheance|date:'dd/MM/yyyy'}}</span>
+        <span>{{'DETAIL_CONTRAT_SCREEN.tableSlider.slideDetail.content.dateEnd'|translate}}</span>
+      </div>
+      <div class="item-view box-title">
+        <span>{{contrat.detailContrat.periodicite}}</span>
+        <span>{{'DETAIL_CONTRAT_SCREEN.tableSlider.slideDetail.content.periodicity'|translate}}</span>
+      </div>
+      <div class="item-view box-title">
+        <!-- <span>{{contrat.detailContrat.primePeriodique|number}} {{devise}}</span> -->
+        <span>{{contrat.detailContrat.montantPrimePeriodique}} {{devise}}</span>
+        <span>{{'DETAIL_CONTRAT_SCREEN.tableSlider.slideDetail.content.primePeriodic'|translate}}</span>
+      </div>
+      <div class="item-view box-title">
+        <span>{{contrat.detailContrat.dureePolice}}</span>
+        <span>{{'DETAIL_CONTRAT_SCREEN.tableSlider.slideDetail.content.dureePolice'|translate}}</span>
+      </div>
+    </mat-card-content>
+  </mat-card>
+  <mat-card class="detail-card">
+    <mat-card-header>
+      <mat-card-title>Situation de compte </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="item-view box-title">
+        <span>{{contrat.detailContrat.cumuleDeCotisation|number }} {{devise}}</span>
+        <span>{{'DETAIL_CONTRAT_SCREEN.tableSlider.slideDetail.content.amountCapital'|translate}}</span>
+      </div>
+      <!-- <div class="item-view box-title">
+        <span>{{contrat._situation.valuerRachat|number}} {{devise}}</span>
+        <span>{{'DETAIL_CONTRAT_SCREEN.tableSlider.slideDetail.content.amountRachat'|translate}}</span>
+      </div> -->
+      <div class="item-view box-title">
+        <span>{{contrat.impayes.count}}</span>
+        <span>{{'DETAIL_CONTRAT_SCREEN.tableSlider.slideDetail.content.numberImpaye'|translate}}</span>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>
+<div id="footer-box">
+  <ion-row>
+    <ion-col size="6" style="background-color: var(--ion-color-primary);">
+      <button
+        color="accent"
+        (click)="onDownloadFileReleveCotisation()"
+        mat-button
+        class="custom-btn-style"
+        matStepperPrevious>
+        <mat-icon style="margin: 0 15px;">class</mat-icon>
+        <span>Mon relevé</span>
+      </button>
+    </ion-col>
+    <ion-col size="6" style="background-color: var(--ion-color-secondary);">
+      <button
+        color="primary"
+        (click)="onDownloadFileAvisSituation()"
+        mat-button
+        matStepperNext>
+          <span style="color: var(--ion-color-white)">Avis de situation</span>
+          <mat-icon style="margin: 0 15px; color: var(--ion-color-white)" color="accent">class</mat-icon>
+      </button>
+    </ion-col>
+  </ion-row>
+</div>
